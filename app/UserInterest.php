@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class NotificationSetting extends Model
+class UserInterest extends Model
 {
     /**
      * The attributes that are mass assignable.
@@ -13,10 +13,7 @@ class NotificationSetting extends Model
      * @var array
      */
     protected $fillable = [
-		'interests_enabled', 'locations_enabled', 'roles_enabled'
+		'user_id', 'interest'
 	];
-
-	public function user() {
-		return $this->belongsTo('App\User');
-	}
 }
+

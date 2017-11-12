@@ -20,11 +20,12 @@ class CreatePromotionsTable extends Migration
 			$table->string('title');
 			$table->text('content');
 			$table->text('attachment')->nullable();
-			$table->json('recipients');
-			$table->json('interests')->nullable();
-			$table->json('locations')->nullable();
-			$table->json('roles')->nullable();
-			$table->string('rsvp_url')->nullable();
+			$table->text('recipients')->nullable();
+			$table->text('interests')->nullable();
+			$table->text('locations')->nullable();
+			$table->text('roles')->nullable();
+            $table->text('rsvp_url')->nullable();
+            $table->integer('approved');
             $table->timestamps();
         });
     }

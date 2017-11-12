@@ -25,8 +25,9 @@ class CreateUsersTable extends Migration
             $table->string('website')->nullable();
             $table->string('github')->nullable();
             $table->string('location');
-            $table->json('interests');
-            $table->enum('role', config('devcommroles.role_slugs'));
+            $table->string('role');
+            $table->integer('public')->default(1);
+            $table->integer('receive_notifications')->default(1);
             $table->rememberToken();
             $table->timestamps();
         });
