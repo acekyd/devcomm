@@ -8,7 +8,7 @@ class UserInterest extends Model
 {
     /**
      * The attributes that are mass assignable.
-	 * Items in the array are arranged in the other they appear in the create_notification_settings_table migration file
+	 * Items in the array are arranged in the other they appear in the create_user_interests_table migration file
      *
      * @var array
      */
