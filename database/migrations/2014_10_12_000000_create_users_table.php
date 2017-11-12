@@ -18,6 +18,15 @@ class CreateUsersTable extends Migration
             $table->string('name');
             $table->string('email')->unique();
             $table->string('password');
+            $table->string('alias')->nullable();
+            $table->text('avatar')->nullable();
+            $table->string('twitter')->nullable();
+            $table->string('facebook')->nullable();
+            $table->string('website')->nullable();
+            $table->string('github')->nullable();
+            $table->string('location');
+            $table->json('interests');
+            $table->enum('role', config('devcommroles.role_slugs'));
             $table->rememberToken();
             $table->timestamps();
         });
