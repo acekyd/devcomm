@@ -11,11 +11,13 @@ class User extends Authenticatable
 
     /**
      * The attributes that are mass assignable.
+	 * Items in the array are arranged in the other they appear in the create_users_table migration file
      *
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+		'name', 'email', 'password', 'alias', 'avatar', 'twitter',
+		'facebook', 'website', 'github', 'location', 'interests', 'role'
     ];
 
     /**
