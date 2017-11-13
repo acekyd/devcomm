@@ -15,5 +15,8 @@ class UserInterest extends Model
     protected $fillable = [
 		'user_id', 'interest'
 	];
-}
 
+	public function user() {
+		return $this->belongsTo('App\User');
+	}
+}
