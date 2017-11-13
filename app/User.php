@@ -29,7 +29,7 @@ class User extends Authenticatable
         'password', 'remember_token',
 	];
 
-	public function notificationSetting() {
-		return $this->hasOne('App\NotificationSetting');
+	public function interests() {
+		return $this->hasMany('App\UserInterest');
 	}
 }
