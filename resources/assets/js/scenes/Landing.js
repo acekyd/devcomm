@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
-import Navbar from './Navbar';
-import Jumbotron from './Jumbotron';
-import StateGrid from './state-grid/StateGrid';
+import Navbar from '../components/Navbar';
+import Jumbotron from '../components/Jumbotron';
+import { StateGrid } from '../components/state-grid';
 import { constants } from '../config';
 
-export default class Master extends Component {
+export default class Landing extends Component {
 	render() {
 		return (
 			<div className='container' id='landing'>

@@ -12919,9 +12919,9 @@ var _reactDom2 = _interopRequireDefault(_reactDom);
 
 var _reactRouter = __webpack_require__(265);
 
-var _Master = __webpack_require__(315);
+var _Landing = __webpack_require__(373);
 
-var _Master2 = _interopRequireDefault(_Master);
+var _Landing2 = _interopRequireDefault(_Landing);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -12939,7 +12939,7 @@ __webpack_require__(343);
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
-_reactDom2.default.render(_react2.default.createElement(_Master2.default, null), document.getElementById('app'));
+_reactDom2.default.render(_react2.default.createElement(_Landing2.default, null), document.getElementById('app'));
 
 /***/ }),
 /* 166 */
@@ -27831,86 +27831,7 @@ $export($export.S, 'Object', { create: __webpack_require__(92) });
 
 
 /***/ }),
-/* 315 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-	value: true
-});
-
-var _getPrototypeOf = __webpack_require__(81);
-
-var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
-
-var _classCallCheck2 = __webpack_require__(88);
-
-var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
-
-var _createClass2 = __webpack_require__(89);
-
-var _createClass3 = _interopRequireDefault(_createClass2);
-
-var _possibleConstructorReturn2 = __webpack_require__(90);
-
-var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);
-
-var _inherits2 = __webpack_require__(97);
-
-var _inherits3 = _interopRequireDefault(_inherits2);
-
-var _react = __webpack_require__(6);
-
-var _react2 = _interopRequireDefault(_react);
-
-var _Navbar = __webpack_require__(316);
-
-var _Navbar2 = _interopRequireDefault(_Navbar);
-
-var _Jumbotron = __webpack_require__(318);
-
-var _Jumbotron2 = _interopRequireDefault(_Jumbotron);
-
-var _StateGrid = __webpack_require__(319);
-
-var _StateGrid2 = _interopRequireDefault(_StateGrid);
-
-var _config = __webpack_require__(153);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-var Master = function (_Component) {
-	(0, _inherits3.default)(Master, _Component);
-
-	function Master() {
-		(0, _classCallCheck3.default)(this, Master);
-		return (0, _possibleConstructorReturn3.default)(this, (Master.__proto__ || (0, _getPrototypeOf2.default)(Master)).apply(this, arguments));
-	}
-
-	(0, _createClass3.default)(Master, [{
-		key: 'render',
-		value: function render() {
-			return _react2.default.createElement(
-				'div',
-				{ className: 'container', id: 'landing' },
-				_react2.default.createElement(_Navbar2.default, null),
-				_react2.default.createElement(_Jumbotron2.default, { text: _config.constants.JUMBOTRON_TEXT }),
-				_react2.default.createElement(
-					'div',
-					{ className: 'state-grid-container' },
-					_react2.default.createElement(_StateGrid2.default, null)
-				)
-			);
-		}
-	}]);
-	return Master;
-}(_react.Component);
-
-exports.default = Master;
-
-/***/ }),
+/* 315 */,
 /* 316 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -60381,6 +60302,108 @@ module.exports = function spread(callback) {
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 369 */,
+/* 370 */,
+/* 371 */,
+/* 372 */,
+/* 373 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
+
+var _getPrototypeOf = __webpack_require__(81);
+
+var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
+
+var _classCallCheck2 = __webpack_require__(88);
+
+var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
+
+var _createClass2 = __webpack_require__(89);
+
+var _createClass3 = _interopRequireDefault(_createClass2);
+
+var _possibleConstructorReturn2 = __webpack_require__(90);
+
+var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);
+
+var _inherits2 = __webpack_require__(97);
+
+var _inherits3 = _interopRequireDefault(_inherits2);
+
+var _react = __webpack_require__(6);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _Navbar = __webpack_require__(316);
+
+var _Navbar2 = _interopRequireDefault(_Navbar);
+
+var _Jumbotron = __webpack_require__(318);
+
+var _Jumbotron2 = _interopRequireDefault(_Jumbotron);
+
+var _stateGrid = __webpack_require__(374);
+
+var _config = __webpack_require__(153);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var Landing = function (_Component) {
+	(0, _inherits3.default)(Landing, _Component);
+
+	function Landing() {
+		(0, _classCallCheck3.default)(this, Landing);
+		return (0, _possibleConstructorReturn3.default)(this, (Landing.__proto__ || (0, _getPrototypeOf2.default)(Landing)).apply(this, arguments));
+	}
+
+	(0, _createClass3.default)(Landing, [{
+		key: 'render',
+		value: function render() {
+			return _react2.default.createElement(
+				'div',
+				{ className: 'container', id: 'landing' },
+				_react2.default.createElement(_Navbar2.default, null),
+				_react2.default.createElement(_Jumbotron2.default, { text: _config.constants.JUMBOTRON_TEXT }),
+				_react2.default.createElement(
+					'div',
+					{ className: 'state-grid-container' },
+					_react2.default.createElement(_stateGrid.StateGrid, null)
+				)
+			);
+		}
+	}]);
+	return Landing;
+}(_react.Component);
+
+exports.default = Landing;
+
+/***/ }),
+/* 374 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
+exports.StateGrid = undefined;
+
+var _StateGrid = __webpack_require__(319);
+
+var _StateGrid2 = _interopRequireDefault(_StateGrid);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+exports.StateGrid = _StateGrid2.default;
 
 /***/ })
 /******/ ]);
