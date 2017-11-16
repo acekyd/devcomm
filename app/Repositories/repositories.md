@@ -10,7 +10,7 @@ The process for creating an IOC container for a model is described below:
 An IOC container typically has a contract (which is an interface describing the methods to be implemented); and a class which implements the methods
 
  3. Create a file called name-of-model-Contract.php (UserContract.php)
- 4. Create another file called Eloquent-name-of-model-Repository.php (EloquentUserRepository.php)
+ 4. Create another file called name-of-model-Repository.php (UserRepository.php)
 
 You also need a service provider to bind the contract and it's implementation
 

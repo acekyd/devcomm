@@ -6,7 +6,7 @@ use App\User;
 use App\Repositories\User\UserContract;
 use App\Utilities\SetModelProperties;
 
-class EloquentUserRepository implements UserContract {
+class UserRepository implements UserContract {
 	public function findOne($id) {
 		return User::find($id);
 	}
