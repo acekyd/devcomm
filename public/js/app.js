@@ -28094,7 +28094,7 @@ var StateGrid = function (_Component) {
 								_context.prev = 0;
 								grid = [];
 								_context.next = 4;
-								return fetch('/api/swcmc');
+								return fetch('/swcmc');
 
 							case 4:
 								response = _context.sent;
