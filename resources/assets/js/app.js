@@ -10,7 +10,6 @@ require('./bootstrap');
 
 import React from 'react';
 import ReactDom from 'react-dom';
-import { Router, Route, browserHistory } from 'react-router';
 
 /**
  * Next, we will create a fresh React component instance and attach it to
@@ -19,6 +18,6 @@ import { Router, Route, browserHistory } from 'react-router';
  */
 
 
-import Landing from './scenes/Landing';
+import { Routes } from './config';
 
-ReactDom.render(<Landing />, document.getElementById('app'));
+ReactDom.render(<Routes />, document.getElementById('app'));

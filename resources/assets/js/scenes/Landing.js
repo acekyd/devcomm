@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
-import Navbar from '../components/Navbar';
-import Jumbotron from '../components/Jumbotron';
-import { StateGrid } from '../components/state-grid';
+import { Navbar, Jumbotron, StateGrid } from '../components';
 import { constants } from '../config';
 
 export default class Landing extends Component {

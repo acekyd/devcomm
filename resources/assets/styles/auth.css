@@ -1,0 +1,123 @@
+@import url(https://fonts.googleapis.com/css?family=Raleway:300,400,600);#landing * {
+	margin: 0;
+	padding: 0;
+	-webkit-box-sizing: border-box;
+			box-sizing: border-box;
+  }
+
+  #landing .menu-container {
+	color: #fff;
+	background-color: #5995DA;
+	/* Blue */
+	padding: 20px 0;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-pack: center;
+		-ms-flex-pack: center;
+			justify-content: center;
+  }
+
+  #landing .menu {
+	width: 900px;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-pack: justify;
+		-ms-flex-pack: justify;
+			justify-content: space-between;
+	padding: 5px;
+  }
+
+  #landing .links {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-pack: end;
+		-ms-flex-pack: end;
+			justify-content: flex-end;
+  }
+
+  #landing .login,
+  #landing .promote {
+	margin-left: 20px;
+  }
+
+  #landing .header-container {
+	color: #FFF;
+	background-color: #D6E9FE;
+	background: url("/header.jpg") no-repeat center center fixed;
+	background-size: cover;
+	position: relative;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-pack: center;
+		-ms-flex-pack: center;
+			justify-content: center;
+	min-height: 40vh;
+  }
+
+  #landing .header-container:before {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	content: '';
+	background-color: rgba(0, 0, 0, 0.7);
+  }
+
+  #landing .header {
+	width: 900px;
+	height: 300px;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-pack: center;
+		-ms-flex-pack: center;
+			justify-content: center;
+	-webkit-box-align: center;
+		-ms-flex-align: center;
+			align-items: center;
+	position: absolute;
+  }
+
+  #landing .state-grid-container {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-pack: center;
+		-ms-flex-pack: center;
+			justify-content: center;
+  }
+
+  #landing .state-grid {
+	width: 900px;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-pack: start;
+		-ms-flex-pack: start;
+			justify-content: flex-start;
+	-ms-flex-wrap: wrap;
+		flex-wrap: wrap;
+	-webkit-box-pack: justify;
+		-ms-flex-pack: justify;
+			justify-content: space-between;
+  }
+
+  #landing .state-grid-item {
+	border: 1px solid #000;
+	width: 200px;
+	height: 50px;
+	padding: 10px;
+	margin-bottom: 10px;
+	margin-top: 10px;
+  }
+
+  * {
+	margin: 0;
+	padding: 0;
+  }
+
