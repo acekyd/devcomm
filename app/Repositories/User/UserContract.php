@@ -8,4 +8,7 @@ interface UserContract {
 	public function create($request);
 	public function edit($id, $request);
 	public function remove($id);
+	public function findUsersInStates(...$states);
+	public function getStateCommunityMemberCount($state);
+	public function getStatesWithCommunityMemberCount();
 }

@@ -36,4 +36,21 @@ class EloquentUserRepository implements UserContract {
 		$user = $this->findOne($id);
 		return $user->delete();
 	}
+
+	public function findUsersInStates(...$states) {
+		return User::whereIn('location', $states)->get();
+	}
+
+	public function getStateCommunityMemberCount($state) {
+		return User::where('location', $state)->count();
+	}
+
+	public function getStatesWithCommunityMemberCount() {
+		$res = []; $states = config('data.locations');
+		foreach ($states as $state) {
+			$res[$state] = $this->getStateCommunityMemberCount($state);
+		}
+
+		return $res;
+	}
 }
