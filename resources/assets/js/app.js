@@ -19,7 +19,6 @@ import { Router, Route, browserHistory } from 'react-router';
  */
 
 
-import Example from './components/Example';
-import Master from './components/Master';
+import Landing from './scenes/Landing';
 
-ReactDom.render(<Master />, document.getElementById('app'));
+ReactDom.render(<Landing />, document.getElementById('app'));
