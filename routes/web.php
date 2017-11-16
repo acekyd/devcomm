@@ -4,6 +4,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::group(['prefix' => 'users'], function() {
-	Route::get('signup', 'UsersController@signup')->name('users.signup');
-});
+Auth::routes();
+
+
+Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/config', 'ConfigController@index')->name('config');
