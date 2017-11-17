@@ -1,5 +1,7 @@
 <?php
 
+namespace App\Utilities;
+
 class SetModelProperties {
 	/**
 	 * This method expects an Eloquent model and a request object(usually the result of submitting a form)
@@ -12,7 +14,7 @@ class SetModelProperties {
 	 * The method simply does the object property assignment(i.e $user->name = $value) - nothing else
 	 */
 	public function setProps($model, $request) {
-		foreach ($request as $key => $value) {
+		foreach ($request->request as $key => $value) {
 			if ($model->isFillable($key)) {
 				$model->{$key} = $value;
 			}
