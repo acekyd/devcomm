@@ -19,5 +19,6 @@ import ReactDom from 'react-dom';
 
 
 import { Routes } from './config';
+import { Landing } from './scenes';
 
-ReactDom.render(<Routes />, document.getElementById('app'));
+ReactDom.render(<Landing />, document.getElementById('app'));

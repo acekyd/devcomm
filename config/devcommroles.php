@@ -5,8 +5,11 @@ return [
         'developer', 'designer', 'developer+designer'
 	],
     'roles' => [
-		'developer' => 'Developer',
-		'designer' => 'Designer',
-		'developer+designer' => 'Developer & Designer'
+        'Designer',
+		'Developer',		
+        'Founder',
+        'Investor',
+        'Product Manager',
+        'Student'
     ]
 ];
