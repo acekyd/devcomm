@@ -3,6 +3,7 @@
 namespace App\Repositories\User;
 
 use App\User;
+use App\State;
 use App\Repositories\User\UserContract;
 use App\Utilities\SetModelProperties;
 
@@ -46,11 +47,11 @@ class UserRepository implements UserContract {
 	}
 
 	public function getStatesWithCommunityMemberCount() {
-		$res = []; $states = config('data.locations');
-		foreach ($states as $state) {
-			$res[$state] = $this->getStateCommunityMemberCount($state);
-		}
+		$result = State::leftJoin('users', 'users.location', '=', 'states.state')
+		->groupBy('states.state')
+		->orderBy('memberCount', 'desc')
+		->get(['states.state', \DB::raw('count(users.location) as memberCount')]);
 
-		return $res;
+		return $result;
 	}
 }

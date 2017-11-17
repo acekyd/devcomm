@@ -24,6 +24,10 @@
         display: flex;
         justify-content: flex-end;
       }
+
+      .links a {
+        color: #fff;
+      }
       
       .login, .promote {
         margin-left: 20px;
@@ -65,19 +69,33 @@
       }
       
       .state-grid {
-        width: 900px;
+        width: 100%;
         display: flex;
-        justify-content: flex-start;
+        justify-content: center;
         flex-wrap: wrap;
-        justify-content: space-between;
+        flex-flow: row wrap;
       }
       
       .state-grid-item {
         border: 1px solid #000;
-        width: 200px;
-        height: 50px;
-        padding: 10px;
-        margin-bottom: 10px;
-        margin-top: 10px;
+        width: calc((100% / 3) - 30px);
+        align-items: center;
+        padding: 30px;
+        align-content: center;
+        margin: 15px;
+        //media queries for stacking cards
+        @media screen and (max-width: 991px) {
+          width: calc((100% / 2) - 30px);
+        }
+
+        @media screen and (max-width: 767px) {
+          width: 100%;
+        }
+
+        p {
+          text-align: center;
+        }
+
       }
+
 }
