@@ -18,11 +18,12 @@
                         <form class="form-horizontal" method="POST" action="{{ route('config.submit') }}">
                             {{ csrf_field() }}
                             <img src="{{ Auth::user()->avatar }}" class="avatar" />
+                            
                             <div class="form-group{{ $errors->has('alias') ? ' has-error' : '' }}">
                                 <label for="alias" class="col-md-4 control-label">Alias</label>
 
                                 <div class="col-md-6">
-                                    <input id="name" type="text" class="form-control" name="alias" value="{{ old('alias') }}" placeholder="e.g. acekyd" required autofocus>
+                                    <input id="alias" type="text" class="form-control" name="alias" value="{{ old('alias') ?? Auth::user()->alias }}" placeholder="e.g. acekyd" required autofocus>
 
                                     @if ($errors->has('alias'))
                                         <span class="help-block">
@@ -33,13 +34,13 @@
                             </div>
 
                             <div class="form-group{{ $errors->has('location') ? ' has-error' : '' }}">
-                                <label for="alias" class="col-md-4 control-label">Location</label>
+                                <label for="location" class="col-md-4 control-label">Location</label>
 
                                 <div class="col-md-6">
                                     <select id="location" class="form-control" name="location" required>
                                         <option value="">Choose Location</option>
                                         @foreach(config('data.locations') as $location)
-                                            <option value="{{ $location }}" {{ (old("location") == $location ? "selected":"") }}> {{ $location }}</option>
+                                            <option value="{{ $location ?? Auth::user()->location }}" {{ ((old("location") == $location) || (Auth::user()->location == $location) ? "selected":"") }}> {{ $location }}</option>
                                         @endforeach
                                     </select>
 
@@ -52,19 +53,19 @@
                             </div>
 
                             <div class="form-group{{ $errors->has('role') ? ' has-error' : '' }}">
-                                <label for="alias" class="col-md-4 control-label">Role</label>
+                                <label for="role" class="col-md-4 control-label">Role</label>
 
                                 <div class="col-md-6">
                                     <select id="role" class="form-control" name="role" required>
                                         <option value="">Choose Role</option>
                                         @foreach(config('devcommroles.roles') as $role)
-                                            <option value="{{ $role }}" {{ (old("role") == $role ? "selected":"") }}> {{ $role }}</option>
+                                            <option value="{{ $role ?? Auth::user()->role }}" {{ ((old("role") == $role) || (Auth::user()->role == $role) ? "selected":"") }}> {{ $role }}</option>
                                         @endforeach
                                     </select>
 
-                                    @if ($errors->has('location'))
+                                    @if ($errors->has('role'))
                                         <span class="help-block">
-                                            <strong>{{ $errors->first('location') }}</strong>
+                                            <strong>{{ $errors->first('role') }}</strong>
                                         </span>
                                     @endif
                                 </div>
@@ -74,7 +75,7 @@
                                 <label for="twitter" class="col-md-4 control-label">Twitter Url</label>
 
                                 <div class="col-md-6">
-                                    <input id="twitter" type="url" class="form-control" name="twitter" value="{{ old('twitter') }}" placeholder="e.g. https://twitter.com/ace_kyd">
+                                    <input id="twitter" type="url" class="form-control" name="twitter" value="{{ old('twitter') ?? Auth::user()->twitter }}" placeholder="e.g. https://twitter.com/ace_kyd">
 
                                     @if ($errors->has('twitter'))
                                         <span class="help-block">
@@ -88,7 +89,7 @@
                                 <label for="facebook" class="col-md-4 control-label">Facebook Url</label>
 
                                 <div class="col-md-6">
-                                    <input id="facebook" type="url" class="form-control" name="facebook" value="{{ old('facebook') }}" placeholder="e.g. https://facebook.com/victor.olowe">
+                                    <input id="facebook" type="url" class="form-control" name="facebook" value="{{ old('facebook') ?? Auth::user()->facebook }}" placeholder="e.g. https://facebook.com/victor.olowe">
 
                                     @if ($errors->has('facebook'))
                                         <span class="help-block">
@@ -102,7 +103,7 @@
                                 <label for="website" class="col-md-4 control-label">Website Url</label>
 
                                 <div class="col-md-6">
-                                    <input id="website" type="url" class="form-control" name="website" value="{{ old('website') }}" placeholder="e.g. https://www.acekyd.com">
+                                    <input id="website" type="url" class="form-control" name="website" value="{{ old('website') ?? Auth::user()->website }}" placeholder="e.g. https://www.acekyd.com">
 
                                     @if ($errors->has('website'))
                                         <span class="help-block">
@@ -117,7 +118,7 @@
                                 <div class="col-md-6 col-md-offset-4">
                                     <div class="checkbox">
                                         <label>
-                                            <input type="checkbox" value="yes" name="receive_notifications" id="receive_notifications">
+                                            <input type="checkbox" value="yes" name="receive_notifications" id="receive_notifications" checked="Auth::user()->receive_notifications">
                                             Receive email notifications for events & opportunities.
                                         </label>
                                     </div>
@@ -128,7 +129,7 @@
                                 <div class="col-md-6 col-md-offset-4">
                                     <div class="checkbox">
                                         <label>
-                                            <input type="checkbox" value="yes" name="public" id="public">
+                                            <input type="checkbox" value="yes" name="public" id="public" checked="Auth::user()->public">
                                             Make profile public so people can find and view your profile. Email is confidential.
                                         </label>
                                     </div>
