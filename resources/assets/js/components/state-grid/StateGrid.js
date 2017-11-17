@@ -19,7 +19,6 @@ export default class StateGrid extends Component {
 						memberCount={responseJson[Object.keys(responseJson)[i]].memberCount}
 					/>
 				);
-				console.log(Object.keys(responseJson)[i]);
 			}
 			this.setState({grid});
 		} catch (error) {
