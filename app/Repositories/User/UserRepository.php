@@ -3,6 +3,7 @@
 namespace App\Repositories\User;
 
 use App\User;
+use App\State;
 use App\Repositories\User\UserContract;
 use App\Utilities\SetModelProperties;
 
@@ -20,6 +21,8 @@ class UserRepository implements UserContract {
 		$smp = new SetModelProperties();
 		$smp->setProps($user, $request);
 		$user->password = bcrypt($request->password);
+		$user->receive_notifications = !is_null($request->receive_notifications);
+		$user->public = !is_null($request->public);
 		$user->save();
 		return $user;
 	}
@@ -28,6 +31,8 @@ class UserRepository implements UserContract {
 		$user = $this->findOne($id);
 		$smp = new SetModelProperties();
 		$smp->setProps($user, $request);
+		$user->receive_notifications = !is_null($request->receive_notifications);
+		$user->public = !is_null($request->public);
 		$user->save();
 		return $user;
 	}
@@ -46,11 +51,11 @@ class UserRepository implements UserContract {
 	}
 
 	public function getStatesWithCommunityMemberCount() {
-		$res = []; $states = config('data.locations');
-		foreach ($states as $state) {
-			$res[$state] = $this->getStateCommunityMemberCount($state);
-		}
+		$result = State::leftJoin('users', 'users.location', '=', 'states.state')
+		->groupBy('states.state')
+		->orderBy('memberCount', 'desc')
+		->get(['states.state', \DB::raw('count(users.location) as memberCount')]);
 
-		return $res;
+		return $result;
 	}
 }

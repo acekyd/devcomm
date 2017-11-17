@@ -32,10 +32,10 @@ class User extends Authenticatable
 	public function interests() {
 		return $this->hasMany('App\UserInterest');
   }
-  
+
   /**
      * Make sure that the avatar returns gravatar when null or correct url when present
-     * 
+     *
      * @param $value
      * @return string
      */
@@ -44,7 +44,7 @@ class User extends Authenticatable
         if($value) {
           return $value;
         }
-        
-        return "https://www.gravatar.com/avatar/".md5($this->email);
+
+        return "https://www.gravatar.com/avatar/".md5($this->email)."?s=200";
     }
 }
