@@ -1,6 +1,12 @@
 <?php
 
-Route::get('/', function () { return view('welcome'); })->name('index');
+Route::get('/', function () { 
+    if(Auth::check())
+    {
+        return redirect()->route('home');
+    }
+    return view('welcome'); 
+})->name('index');
 
 Route::get('/mail/html', function () {
     return view('emails.promotion', ['event_title' => 'Laravel Destruction']);
