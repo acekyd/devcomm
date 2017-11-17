@@ -15,8 +15,8 @@ export default class StateGrid extends Component {
 			for (var i = 0; i < Object.keys(responseJson).length; i++) {
 				grid.push(
 					<StateGridItem
-						state={Object.keys(responseJson)[i]}
-						memberCount={responseJson[Object.keys(responseJson)[i]]}
+						state={responseJson[Object.keys(responseJson)[i]].state}
+						memberCount={responseJson[Object.keys(responseJson)[i]].memberCount}
 					/>
 				);
 			}
