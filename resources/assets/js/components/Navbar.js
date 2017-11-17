@@ -9,7 +9,7 @@ export default function Navbar(props) {
 				<div className='brand'>{constants.APP_NAME}</div>
 				<div className='links'>
 					<a href="/register" className='register'>Join</a>
-					<Link to="/login" className='login'>Login</Link>
+					<a href="/login" className='login'>Login</a>
 					<a href="/promote" className='promote'>Promote</a>
 				</div>
 			</div>

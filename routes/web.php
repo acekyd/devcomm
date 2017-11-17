@@ -53,5 +53,7 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/config', 'ConfigController@index')->name('config');
+Route::get('/promote', 'ConfigController@index')->name('promote');
+
 Route::get('swcmc', 'UserController@statesWithCommunityMemberCount');
 
