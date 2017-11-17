@@ -1,9 +1,12 @@
 <?php
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
+Route::get('/', function () { 
+    if(Auth::check())
+    {
+        return redirect()->route('home');
+    }
+    return view('welcome'); 
+})->name('index');
 
 Route::get('/mail/html', function () {
     return view('emails.promotion', ['event_title' => 'Laravel Destruction']);
@@ -21,8 +24,6 @@ Route::get('/send_test_api_email', function(){
         $message->to('acekyd01@gmail.com', 'Abati Adewale')->subject('DevComm is Coming!');
     });
 });
-
-
 
 Route::get('/send_test_batch_email', function(){
     $users = [
@@ -47,13 +48,12 @@ Route::get('/send_test_batch_email', function(){
     });
 });
 
-
-
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/config', 'ConfigController@index')->name('config');
+Route::post('/config', 'ConfigController@submitConfig')->name('config.submit');
 Route::get('/promote', 'ConfigController@index')->name('promote');
 
+Route::get('authstatus', 'UserController@authStatus')->name('user.authstatus');
 Route::get('swcmc', 'UserController@statesWithCommunityMemberCount');
-

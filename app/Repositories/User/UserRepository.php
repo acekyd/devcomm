@@ -21,6 +21,8 @@ class UserRepository implements UserContract {
 		$smp = new SetModelProperties();
 		$smp->setProps($user, $request);
 		$user->password = bcrypt($request->password);
+		$user->receive_notifications = !is_null($request->receive_notifications);
+		$user->public = !is_null($request->public);
 		$user->save();
 		return $user;
 	}
@@ -29,6 +31,8 @@ class UserRepository implements UserContract {
 		$user = $this->findOne($id);
 		$smp = new SetModelProperties();
 		$smp->setProps($user, $request);
+		$user->receive_notifications = !is_null($request->receive_notifications);
+		$user->public = !is_null($request->public);
 		$user->save();
 		return $user;
 	}

@@ -15,7 +15,7 @@
                     @endif
 
                     <div id="config">
-                        <form class="form-horizontal" method="POST" action="{{ route('config') }}">
+                        <form class="form-horizontal" method="POST" action="{{ route('config.submit') }}">
                             {{ csrf_field() }}
                             <img src="{{ Auth::user()->avatar }}" class="avatar" />
                             <div class="form-group{{ $errors->has('alias') ? ' has-error' : '' }}">
