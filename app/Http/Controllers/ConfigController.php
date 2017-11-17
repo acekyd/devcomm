@@ -28,7 +28,7 @@ class ConfigController extends Controller
     public function index()
     {
         return view('config');
-	}
+	  }
 
 	public function submitConfig(Request $request) {
 		$user = $this->users->edit(Auth::user()->id, $request);
