@@ -15,24 +15,10 @@ export default class LoginForm extends Component {
 		this.setState({ [name]: value});
 	}
 
-	async handleSubmit(e) {
+	handleSubmit(e) {
 		e.preventDefault();
-		try {
-			let response = await fetch('/api/login', {
-				method: 'POST',
-				headers: {
-					'Accept': 'application/json',
-					'Content-Type': 'application/json'
-				},
-				body: JSON.stringify({email:'chi@mail.com', password:'chisom'})
-			});
-			let responseJson = await response.json();
-			console.log(responseJson);
-		} catch (error) {
-			console.error(`Error thrown in LoginForm: ${error}`);
-			reject(error);
-		}
-		console.log('submit form');
+		let payload = { email:this.state.email, password:this.state.password };
+		this.props.handleSubmit(payload);
 	}
 
 	render() {

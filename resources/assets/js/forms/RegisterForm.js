@@ -15,24 +15,10 @@ export default class RegisterForm extends Component {
 		this.setState({ [name]: value});
 	}
 
-	async handleSubmit(e) {
+	handleSubmit(e) {
 		e.preventDefault();
-		try {
-			let response = await fetch('/api/signup', {
-				method: 'POST',
-				headers: {
-					'Accept': 'application/json',
-					'Content-Type': 'application/json'
-				},
-				body: JSON.stringify({name:'Victor Olowe', email:'tolulope21@gmail.com', password:'volowe'})
-			});
-			let responseJson = await response.json();
-			console.log(responseJson);
-		} catch (error) {
-			console.error(`Error thrown in RegisterForm: ${error}`);
-			reject(error);
-		}
-		console.log('submit form');
+		let payload = { name:this.state.name, email:this.state.email, password:this.state.password };
+		this.props.handleSubmit(payload);
 	}
 
 	render() {

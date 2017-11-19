@@ -7,7 +7,7 @@ export default class Navbar extends Component {
 		if (this.props.renderOnHome == true) {
 			return (
 				<div className="links">
-					<a href="/promote">Promote</a>
+					<Link to="/promote">Promote</Link>
 					<ul className="nav navbar-nav navbar-right">
 						<li className="dropdown">
 							<a href="#" className="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true">

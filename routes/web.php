@@ -42,7 +42,7 @@ Route::get('/send_test_batch_email', function(){
     });
 });
 
-Auth::routes();
+// Auth::routes();
 
 // Route::get('/home', 'HomeController@index')->name('home');
 
