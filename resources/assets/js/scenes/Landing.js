@@ -7,7 +7,7 @@ export default class Landing extends Component {
 		return (
 			<div id='landing'>
 				<Navbar/>
-				<Jumbotron text={constants.JUMBOTRON_TEXT}/>
+				<Jumbotron text={constants.JUMBOTRON_TEXT} renderOnHome={true}/>
 				<div className='state-grid-container'>
 					<StateGrid/>
 				</div>

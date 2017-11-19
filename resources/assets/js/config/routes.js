@@ -11,6 +11,7 @@ export default function Routes(props) {
 			<div>
 				<Route exact path='/' component={Scenes.Landing}/>
 				<Route path='/login' component={Scenes.authScenes.Login}/>
+				<Route path='/home' component={Scenes.Home}/>
 			</div>
 		</Router>
 	);
