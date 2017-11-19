@@ -56,7 +56,8 @@ Route::get('/config', 'ConfigController@index')->name('config');
 Route::post('/config', 'ConfigController@submitConfig')->name('config.submit');
 
 Route::get('/promote', 'PromotionController@index')->name('promote');
-Route::post('/promote', 'PromotionController@index')->name('promote.submit');
+Route::post('/promote', 'PromotionController@create')->name('promote.submit');
+Route::get('/promote/success', 'PromotionController@success')->name('promote.success');
 
 Route::get('authstatus', 'UserController@authStatus')->name('user.authstatus');
 Route::get('swcmc', 'UserController@statesWithCommunityMemberCount');

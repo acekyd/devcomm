@@ -15,14 +15,14 @@
                     @endif
 
                     <div id="config">
-                        <form class="form-horizontal" method="POST" action="{{ route('promote.submit') }}">
+                        <form class="form-horizontal" method="POST" enctype='multipart/form-data' action="{{ route('promote.submit') }}">
                             {{ csrf_field() }}
                             
                             <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
-                                <label for="name" class="col-md-4 control-label">Your Name</label>
+                                <label for="name" class="col-md-4 control-label">Organizer Name</label>
 
                                 <div class="col-md-6">
-                                    <input id="name" type="text" class="form-control" name="name" value="{{ old('name') ?? Auth::user()->name }}" placeholder="e.g. Abati Adewale" required autofocus>
+                                    <input id="name" type="text" class="form-control" name="name" value="{{ old('name') }}" placeholder="e.g. Abati Adewale" required autofocus>
 
                                     @if ($errors->has('name'))
                                         <span class="help-block">
@@ -33,10 +33,10 @@
                             </div>
 
                             <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
-                                <label for="email" class="col-md-4 control-label">Your Email</label>
+                                <label for="email" class="col-md-4 control-label">Organizer Email</label>
 
                                 <div class="col-md-6">
-                                    <input id="email" type="email" class="form-control" name="email" value="{{ old('email') ?? Auth::user()->email }}" placeholder="e.g. joe@email.com" required >
+                                    <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" placeholder="e.g. joe@email.com" required >
 
                                     @if ($errors->has('email'))
                                         <span class="help-block">
@@ -65,13 +65,26 @@
 
                                 <div class="col-md-6">
 
-                                    <textarea id="content" name="content" class="form-control" rows="5" placeholder="e.g. Event details" required>
-                                        {{ old('content') }}
-                                    </textarea>
+                                    <textarea id="content" name="content" class="form-control" rows="5" placeholder="e.g. Event details" required>{{ old('content') }}</textarea>
 
                                     @if ($errors->has('content'))
                                         <span class="help-block">
                                             <strong>{{ $errors->first('content') }}</strong>
+                                        </span>
+                                    @endif
+                                </div>
+                            </div>
+
+                            <div class="form-group{{ $errors->has('rsvp_url') ? ' has-error' : '' }}">
+                                <label for="rsvp_url" class="col-md-4 control-label">RSVP URL</label>
+
+                                <div class="col-md-6">
+
+                                    <input id="rsvp_url" name="rsvp_url" class="form-control" value="{{ old('title') }}" placeholder="e.g. https://meetup.com/event" required />
+
+                                    @if ($errors->has('rsvp_url'))
+                                        <span class="help-block">
+                                            <strong>{{ $errors->first('rsvp_url') }}</strong>
                                         </span>
                                     @endif
                                 </div>
@@ -98,9 +111,9 @@
 
                                     <div class="col-md-6">
                                         <select id="location" class="form-control" name="location" required>
-                                            <option value="">Choose Location</option>
+                                            <option value="any">Any Location</option>
                                             @foreach(config('data.locations') as $location)
-                                                <option value="{{ $location ?? Auth::user()->location }}" {{ ((old("location") == $location) || (Auth::user()->location == $location) ? "selected":"") }}> {{ $location }}</option>
+                                                <option value="{{ $location}}" {{ (old("location") == $location ? "selected":"") }}> {{ $location }}</option>
                                             @endforeach
                                         </select>
 
@@ -117,9 +130,9 @@
 
                                     <div class="col-md-6">
                                         <select id="role" class="form-control" name="role" required>
-                                            <option value="">Choose Role</option>
+                                            <option value="any">Any Role</option>
                                             @foreach(config('devcommroles.roles') as $role)
-                                                <option value="{{ $role ?? Auth::user()->role }}" {{ ((old("role") == $role) || (Auth::user()->role == $role) ? "selected":"") }}> {{ $role }}</option>
+                                                <option value="{{ $role }}" {{ (old("role") == $role) ? "selected":"" }}> {{ $role }}</option>
                                             @endforeach
                                         </select>
 
