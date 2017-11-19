@@ -29,9 +29,9 @@ export default class Navbar extends Component {
 		} else {
 			return (
 				<div className="links">
-					<a href="/register" className='register'>Join</a>
+					<Link to="/register" className='register'>Join</Link>
 					<Link to="/login" className='login'>Login</Link>
-					<a href="/promote" className='promote'>Promote</a>
+					<Link to="/promote" className='promote'>Promote</Link>
 				</div>
 			)
 		}

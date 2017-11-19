@@ -1,10 +1,10 @@
 import React from 'react';
-import { AuthNavbar } from '../components';
+import { Navbar } from '../components';
 
 export default function AuthTemplate(props) {
 	return (
 		<div>
-			<AuthNavbar/>
+			<Navbar/>
 			<div className="container">
 				<div className="row">
 					<div className="col-md-8 col-md-offset-2">
