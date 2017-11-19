@@ -32,6 +32,25 @@
 
       .links a {
         color: #fff;
+
+        &:focus, &:hover {
+          background: none;
+        }
+      }
+
+      .links > ul {
+        margin-left: 20px;
+      }
+
+
+
+      .links ul li.open ul.dropdown-menu{
+        position: absolute;
+
+        a {
+          padding: 5px;
+          background: rgb(39, 66, 97);
+        }
       }
       
       .login, .promote {
@@ -76,7 +95,7 @@
       }
       
       .state-grid {
-        width: 100%;
+        width: 80%;
         display: flex;
         justify-content: center;
         flex-wrap: wrap;
@@ -97,6 +116,7 @@
 
         @media screen and (max-width: 767px) {
           width: 100%;
+          margin: 15px 0px;
         }
 
         p {

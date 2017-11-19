@@ -51,9 +51,13 @@ Route::get('/send_test_batch_email', function(){
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
 Route::get('/config', 'ConfigController@index')->name('config');
 Route::post('/config', 'ConfigController@submitConfig')->name('config.submit');
-Route::get('/promote', 'ConfigController@index')->name('promote');
+
+Route::get('/promote', 'PromotionController@index')->name('promote');
+Route::post('/promote', 'PromotionController@create')->name('promote.submit');
+Route::get('/promote/success', 'PromotionController@success')->name('promote.success');
 
 Route::get('authstatus', 'UserController@authStatus')->name('user.authstatus');
 Route::get('swcmc', 'UserController@statesWithCommunityMemberCount');
