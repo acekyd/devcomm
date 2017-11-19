@@ -1,12 +1,12 @@
 import React from 'react';
 import { AuthTemplate } from '../../templates';
-import { LoginForm } from '../../forms';
+import { RegisterForm } from '../../forms';
 import { constants } from '../../config';
 
-export default function Login(props) {
+export default function Register(props) {
 	return (
-		<AuthTemplate title={constants.LOGIN}>
-			<LoginForm/>
+		<AuthTemplate title={constants.REGISTER}>
+			<RegisterForm/>
 		</AuthTemplate>
 	);
 }
