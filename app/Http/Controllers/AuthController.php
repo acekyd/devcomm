@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use Validator;
-use Config, Cookie;
 use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Mail\Message;
@@ -25,9 +24,6 @@ use Carbon\Carbon;
 
 class AuthController extends ApiController
 {
-
-    const REFRESH_TOKEN = 'refreshToken';
-
     private $apiConsumer;
 
     use SendsPasswordResetEmails;
