@@ -14,6 +14,7 @@ use Illuminate\Foundation\Auth\SendsPasswordResetEmails;
 
 use Illuminate\Support\Facades\Mail;
 use App\Mail\ForgotPassword;
+use App\Mail\NewUserSignup;
 
 
 use App\Http\Requests\LoginUserRequest;
@@ -82,7 +83,7 @@ class AuthController extends ApiController
             return $this->response->errorInternal("Could not create user");
         }
 
-        //Mail::to($request->email)->send(new UserSignup($user));
+        Mail::to($request->email)->send(new NewUserSignup($user));
 
         return $this->attemptLogin($request->email, $request->password);
     }

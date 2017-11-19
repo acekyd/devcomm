@@ -4,9 +4,10 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Http\Requests\CreatePromotion;
+use App\Http\Controllers\ApiController;
 use App\Promotion;
 
-class PromotionController extends Controller
+class PromotionController extends ApiController
 {
     /**
      * Create a new controller instance.
@@ -15,16 +16,6 @@ class PromotionController extends Controller
      */
     public function __construct()
     {
-    }
-
-    /**
-     * Show the promotion page.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
-    {
-        return view('promotion');
     }
 
     public function create(CreatePromotion $request)
@@ -53,13 +44,13 @@ class PromotionController extends Controller
                 $promotion->attachment = $url;
             }
             else {
-                return redirect('/promote')->with('error', 'An error occured while uploading attachment. Try again');
+                return $this->response->errorBadRequest('An error occurred while uploading attachment.');
             }
         }
 
         $promotion->save();
 
-        return redirect('/promote/success')->with('message', 'success');
+        return $this->response->noContent(); 
     }
 
     public function success()

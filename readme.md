@@ -20,3 +20,4 @@ DevComm is a directory of developers and designers interested in community activ
 - php artisan passport:install
 - Update config from .env.example in .env
 - chmod 600 storage/oauth-private.key
+- chmod 600 storage/oauth-public.key
