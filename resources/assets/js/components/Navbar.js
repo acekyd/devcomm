@@ -41,7 +41,7 @@ export default class Navbar extends Component {
 		return (
 			<div className='menu-container'>
 				<div className='menu'>
-					<div className='brand'>{constants.APP_NAME}</div>
+					<Link to="/" className='brand'>{constants.APP_NAME}</Link>
 					{this.renderOnHome()}
 				</div>
 			</div>

@@ -32,7 +32,17 @@ class User extends Authenticatable
 
 	public function interests() {
 		return $this->hasMany('App\UserInterest');
-  }
+    }
+
+    /**
+     * This mutator automatically hashes the password.
+     *
+     * @var string
+     */
+    public function setPasswordAttribute($value)
+    {
+        $this->attributes['password'] = \Hash::make($value);
+    }
 
   /**
      * Make sure that the avatar returns gravatar when null or correct url when present

@@ -86,7 +86,7 @@ class AuthController extends ApiController
             return $this->response->errorInternal("Could not create user");
         }
 
-        Mail::to($request->email)->send(new UserSignup($user));
+        //Mail::to($request->email)->send(new UserSignup($user));
 
         return $this->attemptLogin($request->email, $request->password);
     }
