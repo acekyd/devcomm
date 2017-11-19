@@ -16,7 +16,7 @@ export default class Navbar extends Component {
 
 							<ul className="dropdown-menu">
 								<li>
-									<a href="/">Edit Profile</a>
+									<Link to="/config">Edit Profile</Link>
 								</li>
 								<li>
 									<a href="/">Logout</a>
@@ -31,7 +31,7 @@ export default class Navbar extends Component {
 				<div className="links">
 					<Link to="/register" className='register'>Join</Link>
 					<Link to="/login" className='login'>Login</Link>
-					<Link to="/promote" className='promote'>Promote</Link>
+					<Link to="/config" className='promote'>Promote</Link>
 				</div>
 			)
 		}
