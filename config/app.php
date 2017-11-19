@@ -168,6 +168,7 @@ return [
          * Package Service Providers...
          */
         Bogardo\Mailgun\MailgunServiceProvider::class,
+        Optimus\ApiConsumer\Provider\LaravelServiceProvider::class,
         /*
          * Application Service Providers...
          */

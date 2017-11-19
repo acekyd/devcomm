@@ -16,7 +16,8 @@
         "laravel/tinker": "~1.0",
         "optimus/api-consumer": "^0.2.3",
         "php-http/guzzle6-adapter": "^1.1",
-        "dingo/api": "v2.0.0-alpha1"
+        "dingo/api": "v2.0.0-alpha1",
+        "laravel/passport": "3.0.0"
     },
     "require-dev": {
         "filp/whoops": "~2.0",
