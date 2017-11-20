@@ -10,3 +10,14 @@ DevComm is a directory of developers and designers interested in community activ
 
 - Abati Adewale (@acekyd)
 - Victor Olowe (@1hndrxx)
+
+## Setup
+
+- Run composer install or composer update
+- Run npm install
+- php artisan migrate
+- php artisan
+- php artisan passport:install
+- Update config from .env.example in .env
+- chmod 600 storage/oauth-private.key
+- chmod 600 storage/oauth-public.key

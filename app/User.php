@@ -4,10 +4,11 @@ namespace App;
 
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Laravel\Passport\HasApiTokens;
 
 class User extends Authenticatable
 {
-    use Notifiable;
+    use HasApiTokens, Notifiable;
 
     /**
      * The attributes that are mass assignable.
@@ -17,7 +18,7 @@ class User extends Authenticatable
      */
     protected $fillable = [
 		'name', 'email', 'password', 'alias', 'avatar', 'twitter',
-		'facebook', 'website', 'github', 'location', 'interests', 'role'
+		'facebook', 'website', 'github', 'location', 'role'
     ];
 
     /**
@@ -29,7 +30,32 @@ class User extends Authenticatable
         'password', 'remember_token',
 	];
 
-	public function notificationSetting() {
-		return $this->hasOne('App\NotificationSetting');
-	}
+	public function interests() {
+		return $this->hasMany('App\UserInterest');
+    }
+
+    /**
+     * This mutator automatically hashes the password.
+     *
+     * @var string
+     */
+    public function setPasswordAttribute($value)
+    {
+        $this->attributes['password'] = \Hash::make($value);
+    }
+
+  /**
+     * Make sure that the avatar returns gravatar when null or correct url when present
+     *
+     * @param $value
+     * @return string
+     */
+    public function getAvatarAttribute($value)
+    {
+        if($value) {
+          return $value;
+        }
+
+        return "https://www.gravatar.com/avatar/".md5($this->email)."?s=200";
+    }
 }

@@ -1,0 +1,13 @@
+#config {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    img.avatar 
+    {
+        display: block;
+        margin: auto;
+        margin-bottom: 2em;
+        border-radius: 50%;
+    }
+}
