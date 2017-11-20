@@ -6,6 +6,9 @@ use Illuminate\Http\Request;
 use App\Http\Requests\CreatePromotion;
 use App\Http\Controllers\ApiController;
 use App\Promotion;
+use Illuminate\Support\Facades\Mail;
+
+use App\Mail\NewPromotionRequest;
 
 class PromotionController extends ApiController
 {
@@ -50,15 +53,9 @@ class PromotionController extends ApiController
 
         $promotion->save();
 
+        Mail::to('acekyd01@gmail.com')->send(new NewPromotionRequest($promotion));
+
         return $this->response->noContent(); 
     }
 
-    public function success()
-    {
-        if(\Session::get('message') == null) {
-            return redirect('/promote');
-        }
-        
-        return view('promotion-success');
-    }
 }
