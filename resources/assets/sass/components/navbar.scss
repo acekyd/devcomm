@@ -31,18 +31,29 @@
         }
       }
     
-      .links > ul {
+      .links > ul, .links > ul.navbar-nav {
+        margin: 0;
         margin-left: 20px;
+      }
+
+      .links > ul > li > a {
+        display: inline;
       }
     
     
     
       .links ul li.open ul.dropdown-menu{
         position: absolute;
+        border: none;
+        background-color: transparent;
     
         a {
           padding: 5px;
           background: rgb(39, 66, 97);
+        }
+
+        &:hover {
+          color: #fff;
         }
       }
   }
