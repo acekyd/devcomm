@@ -46,6 +46,10 @@
         }
       }
   }
+
+  .menu-container + .container {
+    margin-top:10%;
+  }
   
   .login, .promote {
     margin-left: 20px;
