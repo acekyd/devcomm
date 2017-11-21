@@ -1,13 +1,14 @@
 import React, { Component } from 'react';
 import { constants } from '../config';
+import { Link } from 'react-router-dom';
 
 export default class Jumbotron extends Component {
 	renderOnHome() {
 		if (this.props.renderOnHome == true) {
 			return (
 				<div className='cta'>
-					<a href="/register" className="button join">{constants.SIGNUP_CTA}</a>
-					<a href="/promote" className="button promote">{constants.PROMOTE_CTA}</a>
+					<Link to="/register" className="button join">{constants.SIGNUP_CTA}</Link>
+					<Link to="/promote" className="button promote">{constants.PROMOTE_CTA}</Link>
 				</div>
 			);
 		} else return null

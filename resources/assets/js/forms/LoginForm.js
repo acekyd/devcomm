@@ -18,24 +18,27 @@ export default class LoginForm extends Component {
 	handleSubmit(e) {
 		e.preventDefault();
 		let payload = { email:this.state.email, password:this.state.password };
+		document.getElementById('submitForm').setAttribute('disabled', 'true');
 		this.props.handleSubmit(payload);
+		setTimeout(function(){ document.getElementById('submitForm').removeAttribute('disabled'); }, 3000);
+		
 	}
 
 	render() {
 		return (
 			<form className="form-horizontal" onSubmit={this.handleSubmit}>
 				<div className="form-group">
-					<label for="email" className="col-md-4 control-label">E-Mail Address</label>
+					<label htmlFor="email" className="col-md-4 control-label">E-Mail Address</label>
 
 					<div className="col-md-6">
-						<input required autofocus
+						<input required autoFocus
 							id="email" type="email" className="form-control" name="email" value={this.state.email}
 							onChange={this.handleInputChange}/>
 					</div>
 				</div>
 
 				<div className="form-group">
-					<label for="password" className="col-md-4 control-label">Password</label>
+					<label htmlFor="password" className="col-md-4 control-label">Password</label>
 
 					<div className="col-md-6">
 						<input required
@@ -46,13 +49,13 @@ export default class LoginForm extends Component {
 
 				<div className="form-group">
 					<div className="col-md-8 col-md-offset-4">
-						<button type="submit" className="btn btn-primary">
+						<button type="submit" className="btn btn-primary" id="submitForm">
 							Login
 						</button>
 
-						<a className="btn btn-link" href="/">
+						{/* <a className="btn btn-link" href="/">
 							Forgot Your Password?
-						</a>
+						</a> */}
 					</div>
 				</div>
 			</form>
