@@ -44,6 +44,9 @@ $api->version('v1', function ($api) {
 		//get a particular user's profile by alias
 		$api->get('/profile/{alias}', 'App\Http\Controllers\UserController@show');
 
+		//find users by query
+		$api->get('/profile/find/{keywords}', 'App\Http\Controllers\UserController@find');
+
 		//update user profile, set preferences etc
 		$api->post('/profile', 'App\Http\Controllers\UserController@update');
 

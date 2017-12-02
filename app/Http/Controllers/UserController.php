@@ -41,5 +41,11 @@ class UserController extends ApiController
 		return $this->response->noContent(); 
 	}
 
+	public function find(Request $request)
+	{
+		$users = User::where('name', 'LIKE', "%$request->keywords%")->orWhere('alias', 'LIKE', "%$request->keywords%")->get();
+
+		return response()->json($users);
+	}
 
 }
