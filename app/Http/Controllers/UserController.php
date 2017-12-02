@@ -48,4 +48,11 @@ class UserController extends ApiController
 		return response()->json($users);
 	}
 
+	public function state(Request $request)
+	{
+		$users = User::where('location', $request->state)->get();
+
+		return response()->json($users);
+	}
+
 }
