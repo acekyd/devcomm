@@ -2,10 +2,6 @@
 
 Route::get('/', function () { return view('welcome'); });
 
-Route::get('/{catchall?}', function () {
-    return response()->view('welcome');
-})->where('catchall', '(.*)');
-
 Route::get('/mail/html', function () {
     return view('emails.promotion', ['event_title' => 'Laravel Destruction']);
 });
@@ -45,6 +41,8 @@ Route::get('/send_test_batch_email', function(){
         $message->to($users)->subject('DevComm is Coming!');
     });
 });
+
+
 
 
 Route::get('authstatus', 'UserController@authStatus')->name('user.authstatus');
