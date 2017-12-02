@@ -18,13 +18,6 @@ class UserController extends ApiController
 		return $this->users->getStatesWithCommunityMemberCount();
 	}
 
-	public function authStatus() {
-		return [
-			'check' => Auth::check(),
-			'user' => Auth::user()
-		];
-	}
-
 	public function index(Request $request) {
 		
 		return response()->json($request->user());

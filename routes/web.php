@@ -41,9 +41,3 @@ Route::get('/send_test_batch_email', function(){
         $message->to($users)->subject('DevComm is Coming!');
     });
 });
-
-
-
-
-Route::get('authstatus', 'UserController@authStatus')->name('user.authstatus');
-Route::get('swcmc', 'UserController@statesWithCommunityMemberCount');

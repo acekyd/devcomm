@@ -25,6 +25,9 @@ $api->version('v1', function ($api) {
 	$api->post('/recovery', 'App\Http\Controllers\AuthController@recovery');
 	$api->post('/reset', 'App\Http\Controllers\ResetPasswordController@reset');
 
+	//get states with community members
+	$api->post('/swcmc', 'App\Http\Controllers\UserController@statesWithCommunityMemberCount');
+
 
 	//create a promotion
 	$api->post('/promote', 'App\Http\Controllers\PromotionController@create');
