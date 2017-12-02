@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Dingo\Api\Http\FormRequest;
 
-class CreatePromotion extends FormRequest
+class UpdateUserRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,14 +24,9 @@ class CreatePromotion extends FormRequest
     public function rules()
     {
         return [
-            'name' => 'required',
-            'email' => 'required|email',
-            'title' => 'required|min:6',
-            'content' => 'required|min:20',
+            'alias' => 'required|min:2',
             'location' => 'required',
-            'role' => 'required',
-            'rsvp_url' => 'required|url', 
-            'attachment' => 'nullable|image'
+            'role' => 'required'
         ];
     }
 }

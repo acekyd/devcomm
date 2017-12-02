@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use App\Repositories\User\UserRepository;
 use App\Http\Controllers\ApiController;
 use Auth;
+use App\User;
+use App\Http\Requests\UpdateUserRequest;
 
 class UserController extends ApiController
 {
@@ -24,9 +26,17 @@ class UserController extends ApiController
 
 	}
 
-	public function update(Request $request)
+	//Get a particular person's profile by alias
+	public function show(Request $request) {
+		$user = User::where('alias', $request->alias)->first();
+
+		return response()->json($user);
+	}
+
+
+	public function update(UpdateUserRequest $request)
 	{
-		$user = $this->users->edit(Auth::user()->id, $request);
+		$user = $this->users->edit($request->user()->id, $request);
 
 		return $this->response->noContent(); 
 	}

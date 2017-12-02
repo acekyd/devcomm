@@ -26,7 +26,7 @@ $api->version('v1', function ($api) {
 	$api->post('/reset', 'App\Http\Controllers\ResetPasswordController@reset');
 
 	//get states with community members
-	$api->post('/swcmc', 'App\Http\Controllers\UserController@statesWithCommunityMemberCount');
+	$api->get('/swcmc', 'App\Http\Controllers\UserController@statesWithCommunityMemberCount');
 
 
 	//create a promotion
@@ -40,6 +40,9 @@ $api->version('v1', function ($api) {
 
 		//get user profile
 		$api->get('/profile', 'App\Http\Controllers\UserController@index');
+
+		//get a particular user's profile by alias
+		$api->get('/profile/{alias}', 'App\Http\Controllers\UserController@show');
 
 		//update user profile, set preferences etc
 		$api->post('/profile', 'App\Http\Controllers\UserController@update');
