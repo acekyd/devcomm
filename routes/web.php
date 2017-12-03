@@ -41,3 +41,8 @@ Route::get('/send_test_batch_email', function(){
         $message->to($users)->subject('DevComm is Coming!');
     });
 });
+
+
+Route::get('{slug}', function() {
+    return view('welcome');
+})->where('slug', '(?!api)([A-z\d-\/_.]+)?');

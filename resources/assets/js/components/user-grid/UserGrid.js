@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import StateGridItem from './StateGridItem';
+import UserGridItem from './UserGridItem';
 
-export default class StateGrid extends Component {
+export default class UserGrid extends Component {
 	constructor(props) {
 		super(props);
 		this.state = { grid:null };
@@ -10,25 +10,25 @@ export default class StateGrid extends Component {
 	async componentWillMount() {
 		try {
 			let grid = [];
-			let response = await fetch('/api/swcmc');
+			let response = await fetch('/api/profile/state/Lagos');
 			let responseJson = await response.json();
 			for (var i = 0; i < Object.keys(responseJson).length; i++) {
+				console.log(responseJson[Object.keys(responseJson)[i]])
 				grid.push(
-					<StateGridItem
-						state={responseJson[Object.keys(responseJson)[i]].state}
-						memberCount={responseJson[Object.keys(responseJson)[i]].memberCount}
+					<UserGridItem
+						user={responseJson[Object.keys(responseJson)[i]]}
 					/>
 				);
 			}
 			this.setState({grid});
 		} catch (error) {
-			console.error(`Error thrown in StateGrid component: ${error}`);
+			console.error(`Error thrown in UserGrid component: ${error}`);
 		}
 	}
 
 	render() {
 		return (
-			<div className='state-grid'>
+			<div className='user-grid'>
 				{this.state.grid}
 			</div>
 		);

@@ -34,6 +34,7 @@ $api->version('v1', function ($api) {
 
 	//get all config
 	$api->get('/config', 'App\Http\Controllers\ConfigController@index');
+	$api->get('/profile/state/{state}', 'App\Http\Controllers\UserController@state');
 
 
 	$api->group(['middleware' => 'auth:api'], function ($api) {
@@ -47,8 +48,8 @@ $api->version('v1', function ($api) {
 		//find users by query
 		$api->get('/profile/find/{keywords}', 'App\Http\Controllers\UserController@find');
 
-		//show users by state
-		$api->get('/profile/state/{state}', 'App\Http\Controllers\UserController@state');
+		// //show users by state
+		// $api->get('/profile/state/{state}', 'App\Http\Controllers\UserController@state');
 
 		//update user profile, set preferences etc
 		$api->post('/profile', 'App\Http\Controllers\UserController@update');

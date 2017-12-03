@@ -1,0 +1,47 @@
+.user-grid-container {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .user-grid {
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    flex-flow: row wrap;
+  }
+  
+  .user-grid-item {
+    align-items: center;
+    padding: 10px;
+    align-content: center;
+    margin: 15px;
+    //media queries for stacking cards
+    @media screen and (max-width: 991px) {
+      width: calc((100% / 2) - 30px);
+    }
+
+    @media screen and (max-width: 767px) {
+      width: 100%;
+      margin: 15px 0px;
+    }
+
+    img {
+        border-radius: 50%;
+    }
+
+    p {
+      text-align: center;
+      text-transform: uppercase;
+    }
+
+    p.name {
+        color: #5995DA;
+        font-size: 18px;
+        font-weight: 900;
+        letter-spacing: 0.1rem;
+        margin: 0;
+    }
+
+
+  }

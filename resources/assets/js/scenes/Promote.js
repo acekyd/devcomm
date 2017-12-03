@@ -4,14 +4,11 @@ import { PromoteForm } from '../forms';
 import { constants } from '../config';
 
 export default class Promote extends Component {
-	constructor(props) {
-		super(props)
-	}
 
 	render() {
 		return (
 			<div>
-				<Navbar renderOnHome={true} name='Victor'/>
+				<Navbar/>
 				<div className="container">
                     <div className="row">
                         <div className="col-md-8 col-md-offset-2">

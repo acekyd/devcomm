@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Navbar, Jumbotron } from '../components';
+import { Navbar, Jumbotron, UserGrid } from '../components';
 import { constants } from '../config';
 
 export default class Home extends Component {
@@ -13,6 +13,9 @@ export default class Home extends Component {
 			<div id='landing'>
 				<Navbar renderOnHome={true} name={this.state.name}/>
 				<Jumbotron text={constants.JUMBOTRON_TEXT}/>
+				<div className='user-grid-container'>
+					<UserGrid/>
+				</div>
 			</div>
 		);
 	}

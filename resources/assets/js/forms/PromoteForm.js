@@ -26,7 +26,7 @@ export default class PromoteForm extends Component {
 
 	render() {
 		return (
-			<form className="form-horizontal" method="POST" enctype='multipart/form-data' action="">
+			<form className="form-horizontal" method="POST" encType='multipart/form-data' action="">
                 <div className="form-group">
                     <label htmlFor="name" className="col-md-4 control-label">Organizer Name</label>
 
