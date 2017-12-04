@@ -19,12 +19,13 @@
       }
       
       .state-grid-item {
-        border: 1px solid #000;
+        border: 1px solid #ccc;
         width: calc((100% / 3) - 30px);
         align-items: center;
         padding: 30px;
         align-content: center;
         margin: 15px;
+        box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
         //media queries for stacking cards
         @media screen and (max-width: 991px) {
           width: calc((100% / 2) - 30px);

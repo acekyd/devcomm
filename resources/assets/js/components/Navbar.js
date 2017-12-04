@@ -3,6 +3,7 @@ import { constants } from '../config';
 import { Link } from 'react-router-dom';
 
 export default class Navbar extends Component {
+
 	renderOnHome() {
 		if (this.props.renderOnHome == true) {
 			return (
@@ -19,7 +20,7 @@ export default class Navbar extends Component {
 									<Link to="/profile/edit">Edit Profile</Link>
 								</li>
 								<li>
-									<a href="/">Logout</a>
+									<Link to="/" onClick={localStorage.clear()}>Logout</Link>
 								</li>
 							</ul>
 						</li>

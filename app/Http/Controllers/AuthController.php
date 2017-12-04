@@ -103,9 +103,9 @@ class AuthController extends ApiController
             $login = $this->proxy('password', [
                 'username' => $email,
                 'password' => $password
-            ]);
+            ], $user);
 
-            return response()->json($login);
+            return response()->json([$login]);
         }
 
         //throw new InvalidCredentialsException();
@@ -119,7 +119,7 @@ class AuthController extends ApiController
      * @param string $grantType what type of grant type should be proxied
      * @param array $data the data to send to the server
      */
-    public function proxy($grantType, array $data = [])
+    public function proxy($grantType, array $data = [], $user = null)
     {
         $data = array_merge($data, [
             'client_id'     => env('PASSWORD_CLIENT_ID'),
@@ -137,7 +137,13 @@ class AuthController extends ApiController
         $data = json_decode($response->getContent());
 
         return [
-            'access_token' => $data->access_token
+            'access_token' => $data->access_token,
+            'user' => [
+                'name' => $user->name,
+                'alias' => $user->alias,
+                'location' => $user->location,
+                'role' => $user->role
+            ]
         ];
     }
 

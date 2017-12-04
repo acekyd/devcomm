@@ -1,0 +1,69 @@
+.user-container {
+    display: flex;
+    justify-content: center;
+  }
+
+  .user {
+    width: 70%;
+    display: flex;
+    padding: 2em;
+    flex-wrap: wrap;
+    flex-flow: row wrap;
+    border: 1px solid #ccc;
+    margin: 2em;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+
+    .avatar {
+        margin: 0 5em;
+    }
+
+    .details {
+        flex: 1;
+        margin-top: 3em;
+        .name-box {
+            border-bottom: 5px solid #636b6f;
+            margin-bottom: 1em;
+
+            p {
+                font-size: 2.5em;
+                font-weight: 100;
+
+                span.name {
+                    font-weight: 900;
+                }
+
+                &.alias {
+                    font-size: 1.5em;
+                }
+            }
+        }
+
+        .entry {
+            display: flex;
+            flex-flow: row wrap;
+
+            .title {
+                text-transform: uppercase;
+                font-weight: 900;
+                font-size: 16px;
+                flex: 1;
+            }
+
+            .value {
+                flex: 2;
+            }
+        }
+
+        .icons {
+            display: flex;
+            justify-content: space-between;
+            width: 50%;
+        }
+
+        .state-link {
+            display: flex;
+            justify-content: flex-end;
+            font-size: 14px;
+        }
+    }
+  }

@@ -56,6 +56,6 @@ class User extends Authenticatable
           return $value;
         }
 
-        return "https://www.gravatar.com/avatar/".md5($this->email)."?s=200";
+        return "https://www.gravatar.com/avatar/".md5($this->email)."?s=360";
     }
 }

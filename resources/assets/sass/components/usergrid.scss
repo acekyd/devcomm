@@ -42,6 +42,23 @@
         letter-spacing: 0.1rem;
         margin: 0;
     }
+  }
 
+  .socialShare {
+    width: 80%;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    padding: 5em;
+    border: 1px solid #ccc;
+    margin: 2em;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    font-size: 25px;
+    text-align: center;
 
+    .socialShareIcons {
+      width: 60%;
+      display: flex;
+      justify-content: space-between;
+    }
   }
