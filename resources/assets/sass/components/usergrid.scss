@@ -1,0 +1,64 @@
+.user-grid-container {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .user-grid {
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    flex-flow: row wrap;
+  }
+  
+  .user-grid-item {
+    align-items: center;
+    padding: 10px;
+    align-content: center;
+    margin: 15px;
+    //media queries for stacking cards
+    @media screen and (max-width: 991px) {
+      width: calc((100% / 2) - 30px);
+    }
+
+    @media screen and (max-width: 767px) {
+      width: 100%;
+      margin: 15px 0px;
+    }
+
+    img {
+        border-radius: 50%;
+    }
+
+    p {
+      text-align: center;
+      text-transform: uppercase;
+    }
+
+    p.name {
+        color: #5995DA;
+        font-size: 18px;
+        font-weight: 900;
+        letter-spacing: 0.1rem;
+        margin: 0;
+    }
+  }
+
+  .socialShare {
+    width: 80%;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    padding: 5em;
+    border: 1px solid #ccc;
+    margin: 2em;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    font-size: 25px;
+    text-align: center;
+
+    .socialShareIcons {
+      width: 60%;
+      display: flex;
+      justify-content: space-between;
+    }
+  }

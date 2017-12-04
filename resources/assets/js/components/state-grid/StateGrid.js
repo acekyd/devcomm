@@ -10,7 +10,7 @@ export default class StateGrid extends Component {
 	async componentWillMount() {
 		try {
 			let grid = [];
-			let response = await fetch('/swcmc');
+			let response = await fetch('/api/swcmc');
 			let responseJson = await response.json();
 			for (var i = 0; i < Object.keys(responseJson).length; i++) {
 				grid.push(

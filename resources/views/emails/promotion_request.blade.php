@@ -31,6 +31,7 @@
                     <p><b>Title:</b> {{ $promotion->title }}</p>
                     <p><b>Content:</b> {{ $promotion->content }}</p>
                     <p><b>RSVP URL:</b> {{ $promotion->rsvp_url }}</p>
+                    <p><b>attachment:</b> <img src="{{$promotion->attachment}}" alt="{{ $promotion->title }}" />
 
         </table>
     </div>

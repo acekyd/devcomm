@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use App\Repositories\User\UserRepository;
 use App\Http\Controllers\ApiController;
 use Auth;
+use App\User;
+use App\Http\Requests\UpdateUserRequest;
 
 class UserController extends ApiController
 {
@@ -18,25 +20,39 @@ class UserController extends ApiController
 		return $this->users->getStatesWithCommunityMemberCount();
 	}
 
-	public function authStatus() {
-		return [
-			'check' => Auth::check(),
-			'user' => Auth::user()
-		];
-	}
-
 	public function index(Request $request) {
 		
 		return response()->json($request->user());
 
 	}
 
-	public function update(Request $request)
+	//Get a particular person's profile by alias
+	public function show(Request $request) {
+		$user = User::where('alias', $request->alias)->first();
+
+		return response()->json($user);
+	}
+
+
+	public function update(UpdateUserRequest $request)
 	{
-		$user = $this->users->edit(Auth::user()->id, $request);
+		$user = $this->users->edit($request->user()->id, $request);
 
 		return $this->response->noContent(); 
 	}
 
+	public function find(Request $request)
+	{
+		$users = User::where('name', 'LIKE', "%$request->keywords%")->orWhere('alias', 'LIKE', "%$request->keywords%")->get();
+
+		return response()->json($users);
+	}
+
+	public function state(Request $request)
+	{
+		$users = User::where('location', $request->state)->get();
+
+		return response()->json($users);
+	}
 
 }

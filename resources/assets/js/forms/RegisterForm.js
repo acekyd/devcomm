@@ -18,34 +18,36 @@ export default class RegisterForm extends Component {
 	handleSubmit(e) {
 		e.preventDefault();
 		let payload = { name:this.state.name, email:this.state.email, password:this.state.password };
+		document.getElementById('submitForm').setAttribute('disabled', 'true');
 		this.props.handleSubmit(payload);
+		setTimeout(function(){ document.getElementById('submitForm').removeAttribute('disabled'); }, 3000);
 	}
 
 	render() {
 		return (
 			<form className="form-horizontal" onSubmit={this.handleSubmit}>
 				<div className="form-group">
-					<label for="name" className="col-md-4 control-label">Name</label>
+					<label htmlFor="name" className="col-md-4 control-label">Name</label>
 
 					<div className="col-md-6">
-						<input required autofocus
+						<input required autoFocus
 							id="name" type="text" className="form-control" name="name" value={this.state.name}
 							onChange={this.handleInputChange}/>
 					</div>
 				</div>
 
 				<div className="form-group">
-					<label for="email" className="col-md-4 control-label">E-Mail Address</label>
+					<label htmlFor="email" className="col-md-4 control-label">E-Mail Address</label>
 
 					<div className="col-md-6">
-						<input required autofocus
+						<input required
 							id="email" type="email" className="form-control" name="email" value={this.state.email}
 							onChange={this.handleInputChange}/>
 					</div>
 				</div>
 
 				<div className="form-group">
-					<label for="password" className="col-md-4 control-label">Password</label>
+					<label htmlFor="password" className="col-md-4 control-label">Password</label>
 
 					<div className="col-md-6">
 						<input required
@@ -55,7 +57,7 @@ export default class RegisterForm extends Component {
 				</div>
 
 				<div className="form-group">
-					<label for="password-confirm" className="col-md-4 control-label">Confirm Password</label>
+					<label htmlFor="password-confirm" className="col-md-4 control-label">Confirm Password</label>
 
 					<div className="col-md-6">
 						<input required
@@ -66,7 +68,7 @@ export default class RegisterForm extends Component {
 
 				<div className="form-group">
 					<div className="col-md-8 col-md-offset-4">
-						<button type="submit" className="btn btn-primary">
+						<button type="submit" className="btn btn-primary" id="submitForm">
 							Register
 						</button>
 					</div>

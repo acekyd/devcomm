@@ -43,5 +43,6 @@ Route::get('/send_test_batch_email', function(){
 });
 
 
-Route::get('authstatus', 'UserController@authStatus')->name('user.authstatus');
-Route::get('swcmc', 'UserController@statesWithCommunityMemberCount');
+Route::get('{slug}', function() {
+    return view('welcome');
+})->where('slug', '(?!api)([A-z\d-\/_.]+)?');
