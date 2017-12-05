@@ -18,9 +18,15 @@ export default class RegisterForm extends Component {
 	handleSubmit(e) {
 		e.preventDefault();
 		let payload = { name:this.state.name, email:this.state.email, password:this.state.password };
-		document.getElementById('submitForm').setAttribute('disabled', 'true');
-		this.props.handleSubmit(payload);
-		setTimeout(function(){ document.getElementById('submitForm').removeAttribute('disabled'); }, 3000);
+		if(this.state.password != this.state.confirmPassword)
+		{
+			alert("Passwords do not match");
+		}
+		else {
+			document.getElementById('submitForm').setAttribute('disabled', 'true');
+			this.props.handleSubmit(payload);
+		}
+		
 	}
 
 	render() {

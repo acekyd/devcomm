@@ -38,7 +38,14 @@ class UserController extends ApiController
 	{
 		$user = $this->users->edit($request->user()->id, $request);
 
-		return $this->response->noContent(); 
+		$data = [
+			'name' => $user->name,
+			'alias' => $user->alias,
+			'location' => $user->location,
+			'role' => $user->role
+		];
+
+		return response()->json($data); 
 	}
 
 	public function find(Request $request)

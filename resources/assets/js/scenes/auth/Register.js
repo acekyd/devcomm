@@ -3,11 +3,12 @@ import { AuthTemplate } from '../../templates';
 import { RegisterForm } from '../../forms';
 import { constants } from '../../config';
 import { Redirect } from 'react-router-dom';
+import { ErrorMessages } from '../../components';
 
 export default class Register extends Component {
 	constructor(props) {
 		super(props);
-		this.state = { loggedIn:false };
+		this.state = { loggedIn:false, errors:[] };
 		this.handleSubmit = this.handleSubmit.bind(this);
 	}
 
@@ -21,12 +22,25 @@ export default class Register extends Component {
 				},
 				body: JSON.stringify(payload)
 			});
+
 			let responseJson = await response.json();
+
 			if (!response.ok) {
-				console.log(responseJson.message);
+				let errors = []
+				for (var error in Object.keys(responseJson.errors) ) {
+					
+					errors.push(
+						<p>{responseJson.errors[Object.keys(responseJson.errors)[error]][0]}</p>
+					);
+				}
+				this.setState({loggedIn: false, errors: errors});
+				document.getElementById('submitForm').removeAttribute('disabled');
+			
 			} else {
-				//Store token in local storage and update state (which causes a re-render, thus performing the check for access_token)
-				localStorage.setItem('access_token', responseJson.access_token);
+				//Store token in local storage and update state
+
+				localStorage.setItem('access_token', responseJson[0].access_token);
+				localStorage.setItem('user', JSON.stringify(responseJson[0].user));
 				this.setState({loggedIn: true});
 			}
 		} catch (error) {
@@ -37,10 +51,11 @@ export default class Register extends Component {
 
 	render() {
 		if (localStorage.getItem(constants.ACCESS_TOKEN_LS)) {
-			return <Redirect to='/home'/>
+			return <Redirect to='/profile/edit'/>
 		} else {
 			return (
 				<AuthTemplate title={constants.REGISTER}>
+					<ErrorMessages errors={this.state.errors}/>
 					<RegisterForm handleSubmit={this.handleSubmit} loggedIn={this.state.loggedIn}/>
 				</AuthTemplate>
 			);

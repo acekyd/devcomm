@@ -16,6 +16,12 @@
     padding: 10px;
     align-content: center;
     margin: 15px;
+    border: 1px solid #ccc;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+
+    &:hover {
+        box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    }
     //media queries for stacking cards
     @media screen and (max-width: 991px) {
       width: calc((100% / 2) - 30px);
@@ -28,6 +34,8 @@
 
     img {
         border-radius: 50%;
+        width:50%;
+        height: auto;
     }
 
     p {
@@ -42,7 +50,12 @@
         letter-spacing: 0.1rem;
         margin: 0;
     }
+
+    .user-grid-item__inner {
+      text-align: center;
+    }
   }
+
 
   .socialShare {
     width: 80%;

@@ -20,7 +20,6 @@ export default class LoginForm extends Component {
 		let payload = { email:this.state.email, password:this.state.password };
 		document.getElementById('submitForm').setAttribute('disabled', 'true');
 		this.props.handleSubmit(payload);
-		setTimeout(function(){ document.getElementById('submitForm').removeAttribute('disabled'); }, 3000);
 		
 	}
 

@@ -4,24 +4,43 @@ import { Link } from 'react-router-dom';
 
 export default class Navbar extends Component {
 
+	async componentWillMount() {
+		try {
+			let config = '';
+
+			if(localStorage.getItem('config') == null)
+			{
+				let response = await fetch('/api/config');
+				let responseJson = await response.json();
+				config = JSON.stringify(responseJson);
+				localStorage.setItem('config', config);
+			}
+			else config = localStorage.getItem('config');
+			
+		} catch (error) {
+			console.error(`Error thrown in NavBar Config component: ${error}`);
+		}
+	}
+
 	renderOnHome() {
-		if (this.props.renderOnHome == true) {
+		let user = JSON.parse(localStorage.getItem('user'));
+		if (user != null) {
 			return (
 				<div className="links">
 					<Link to="/promote">Promote</Link>
 					<ul className="nav navbar-nav navbar-right">
 						<li className="dropdown">
 							<a href="#" className="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true">
-								{this.props.name} <span className="caret"></span>
+								{user.name} <span className="caret"></span>
 							</a>
 
 							<ul className="dropdown-menu">
 								<li>
 									<Link to="/profile/edit">Edit Profile</Link>
 								</li>
-								<li>
-									<Link to="/" onClick={localStorage.clear()}>Logout</Link>
-								</li>
+								{/* <li>
+									<Link to="/logout">Logout</Link>
+								</li> */}
 							</ul>
 						</li>
 					</ul>

@@ -22,10 +22,9 @@ export default class UserGrid extends Component {
 	async componentWillMount() {
 		try {
 			let grid = [];
-			let response = await fetch('/api/profile/state/Lagos');
+			let response = await fetch('/api/profile/state/'+this.props.state);
 			let responseJson = await response.json();
 			for (var i = 0; i < Object.keys(responseJson).length; i++) {
-				console.log(responseJson[Object.keys(responseJson)[i]])
 				grid.push(
 					<UserGridItem
 						user={responseJson[Object.keys(responseJson)[i]]}
@@ -39,7 +38,6 @@ export default class UserGrid extends Component {
 	}
 
 	render() {
-		console.log(this.state.grid);
 		const shareUrl = 'http://devcomm.co';
 		const title = 'Are you passionate about Nigerian tech community? Join me and others now on DevComm.co';
 		return (
