@@ -18,7 +18,6 @@ export default class ConfigForm extends Component {
 
 	handleSubmit(e) {
 		e.preventDefault();
-		console.log('submit form');
 		let payload = { alias:this.state.alias, location:this.state.location, role:this.state.role, twitter:this.state.twitter, facebook:this.state.facebook, website:this.state.website, github:this.state.github, receive_notifications:this.state.receive_notifications, public:this.state.public };
 		
 		document.getElementById('submitForm').setAttribute('disabled', 'true');

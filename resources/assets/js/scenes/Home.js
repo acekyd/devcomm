@@ -15,7 +15,6 @@ export default class Home extends Component {
 			return <Redirect to='/profile/edit'/>
 		}
 		let state = this.props.match.params.state;
-		console.log(state);
 		if(state==null) state = user.location
 		return (
 			<div id='landing'>

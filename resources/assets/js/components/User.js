@@ -70,7 +70,6 @@ export default class User extends Component {
 			let response = await fetch('/api/profile/'+this.props.user);
             let responseJson = await response.json();
             user = responseJson;
-            console.log(user);
 			this.setState({user});
 		} catch (error) {
 			console.error(`Error thrown in User component: ${error}`);

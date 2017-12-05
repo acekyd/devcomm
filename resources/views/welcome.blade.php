@@ -11,5 +11,8 @@
     <body>
         <div id="app"></div>
         <script src="{{asset('js/app.js')}}" ></script>
+        <footer class="footer">
+            &spades; &copy DevComm 2017. Inspired by <a href="http://tribute.imogiemubarak.com" target="_blank">#AIM</a>. 
+        </footer>
     </body>
 </html>

@@ -25,7 +25,6 @@ export default class Login extends Component {
 			let responseJson = await response.json();
 
 			if (!response.ok) {
-				console.log(responseJson.message);
 
 				let errors = [];
 
