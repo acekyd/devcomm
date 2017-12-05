@@ -3,11 +3,12 @@ import { AuthTemplate } from '../../templates';
 import { LoginForm } from '../../forms';
 import { constants } from '../../config';
 import { Redirect } from 'react-router-dom';
+import { ErrorMessages } from '../../components';
 
 export default class Login extends Component {
 	constructor(props) {
 		super(props);
-		this.state = { loggedIn:false };
+		this.state = { loggedIn:false, errors:[] };
 		this.handleSubmit = this.handleSubmit.bind(this);
 	}
 
@@ -22,11 +23,23 @@ export default class Login extends Component {
 				body: JSON.stringify(payload)
 			});
 			let responseJson = await response.json();
+
 			if (!response.ok) {
 				console.log(responseJson.message);
+
+				let errors = [];
+
+				errors.push(
+					<p>{responseJson.message}</p>
+				);
+				this.setState({loggedIn: false, errors: errors});
+				document.getElementById('submitForm').removeAttribute('disabled');
+
 			} else {
-				//Store token in local storage and update state (which causes a re-render, thus performing the check for access_token)
-				localStorage.setItem('access_token', responseJson.access_token);
+				//Store token in local storage and update state
+
+				localStorage.setItem('access_token', responseJson[0].access_token);
+				localStorage.setItem('user', JSON.stringify(responseJson[0].user));
 				this.setState({loggedIn: true});
 			}
 		} catch (error) {
@@ -41,6 +54,7 @@ export default class Login extends Component {
 		} else {
 			return (
 				<AuthTemplate title={constants.LOGIN}>
+					<ErrorMessages errors={this.state.errors}/>
 					<LoginForm handleSubmit={this.handleSubmit} loggedIn={this.state.loggedIn}/>
 				</AuthTemplate>
 			);

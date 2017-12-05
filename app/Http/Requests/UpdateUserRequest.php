@@ -3,6 +3,7 @@
 namespace App\Http\Requests;
 
 use Dingo\Api\Http\FormRequest;
+use Illuminate\Validation\Rule;
 
 class UpdateUserRequest extends FormRequest
 {
@@ -24,7 +25,11 @@ class UpdateUserRequest extends FormRequest
     public function rules()
     {
         return [
-            'alias' => 'required|min:2',
+            'alias' => [
+                'required',
+                'min:2',
+                Rule::unique('users')->ignore(request()->user()->id)
+            ],
             'location' => 'required',
             'role' => 'required'
         ];

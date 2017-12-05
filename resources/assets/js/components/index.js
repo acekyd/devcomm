@@ -3,6 +3,7 @@ import Jumbotron from './Jumbotron';
 import { StateGrid } from './state-grid';
 import { UserGrid } from './user-grid';
 import User from './User';
+import ErrorMessages from './ErrorMessages';
 import 'font-awesome/css/font-awesome.min.css';
 
 export {
@@ -10,5 +11,6 @@ export {
 	Jumbotron,
 	StateGrid,
 	User,
-	UserGrid
+	UserGrid,
+	ErrorMessages
 }
