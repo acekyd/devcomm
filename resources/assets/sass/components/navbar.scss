@@ -84,16 +84,16 @@
     left: 0;
     right: 0;
     content: '';
-    background-color: rgba(0,0,0, 0.7);
+    background-color: rgba(0,0,0, 0.8);
   }
   
   .header {
     width: 100%;
     height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     position: absolute;
     text-align: center;
-    flex-flow: column;
+
+    .logo {
+      margin-top: 5%;
+    }
   }
