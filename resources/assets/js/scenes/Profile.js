@@ -8,11 +8,12 @@ export default class Profile extends Component {
 	}
 
 	render() {
+		const alias = this.props.match.params.page;
 		return (
 			<div id='landing'>
 				<Navbar renderOnHome={true}/>
 				<Jumbotron text={constants.JUMBOTRON_TEXT}/>
-				<User/>
+				<User user={alias}/>
 			</div>
 		);
 	}

@@ -55,7 +55,7 @@ export default class User extends Component {
                         </div>
                         
                         <div className="state-link">
-                            <Link to={"/state/"+this.state.user.location}>&larr; See other community members in {this.state.user.location} </Link>
+                            <Link to={"/location/"+this.state.user.location}>&larr; See other community members in {this.state.user.location} </Link>
                         </div>
                     </div>
                 </div>
@@ -67,7 +67,7 @@ export default class User extends Component {
     async componentWillMount() {
 		try {
 			let user = [];
-			let response = await fetch('/api/profile/acekyd');
+			let response = await fetch('/api/profile/'+this.props.user);
             let responseJson = await response.json();
             user = responseJson;
             console.log(user);
