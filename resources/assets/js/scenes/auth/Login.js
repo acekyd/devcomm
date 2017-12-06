@@ -43,6 +43,7 @@ export default class Login extends Component {
 			}
 		} catch (error) {
 			console.error(`Error thrown in Login: ${error}`);
+			document.getElementById('submitForm').removeAttribute('disabled');
 			// reject(error);
 		}
 	}

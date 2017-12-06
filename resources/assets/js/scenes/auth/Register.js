@@ -45,6 +45,7 @@ export default class Register extends Component {
 			}
 		} catch (error) {
 			console.error(`Error thrown in Register: ${error}`);
+			document.getElementById('submitForm').removeAttribute('disabled');
 			// reject(error);
 		}
 	}

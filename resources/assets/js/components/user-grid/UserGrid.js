@@ -22,8 +22,15 @@ export default class UserGrid extends Component {
 	async componentWillMount() {
 		try {
 			let grid = [];
-			let response = await fetch('/api/profile/state/'+this.props.state);
-			let responseJson = await response.json();
+			let response = await axios.get('/api/profile/state/'+this.props.state, {
+				headers: {
+					'Accept': 'application/json',
+					'Content-Type': 'application/json',
+					'Authorization': 'Bearer '+localStorage.getItem('access_token')
+				}
+			});
+			
+			let responseJson = response.data;
 			for (var i = 0; i < Object.keys(responseJson).length; i++) {
 				grid.push(
 					<UserGridItem
@@ -45,9 +52,9 @@ export default class UserGrid extends Component {
 				{this.state.grid}
 
 			
-			{this.state.grid == null || this.state.grid.length < 1 ? (
+			{this.state.grid == null || this.state.grid.length < 2 ? (
 				<div className='socialShare'>
-					<p>You seem to be the first from your state. Get others to join now and let's build the community.</p>
+					<p>Seems we need more people here from {this.props.state}. Get others to join now and let's build the community.</p>
 					<div className="socialShareIcons">
 						<TwitterShareButton url={shareUrl} title={title}>
 							<TwitterIcon size={64} round />

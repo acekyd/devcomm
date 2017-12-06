@@ -45,6 +45,7 @@ export default class Config extends Component {
 			}
 		} catch (error) {
 			console.error(`Error thrown in Profile Update: ${error}`);
+			document.getElementById('submitForm').removeAttribute('disabled');
 			// reject(error);
 		}
 	}

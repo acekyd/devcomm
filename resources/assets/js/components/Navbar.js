@@ -10,8 +10,8 @@ export default class Navbar extends Component {
 
 			if(localStorage.getItem('config') == null)
 			{
-				let response = await fetch('/api/config');
-				let responseJson = await response.json();
+				let response = await axios.get('/api/config');
+				let responseJson = response.data;
 				config = JSON.stringify(responseJson);
 				localStorage.setItem('config', config);
 			}
