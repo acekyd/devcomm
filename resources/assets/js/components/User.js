@@ -67,8 +67,8 @@ export default class User extends Component {
     async componentWillMount() {
 		try {
 			let user = [];
-			let response = await fetch('/api/profile/'+this.props.user);
-            let responseJson = await response.json();
+			let response = await axios.get('/api/profile/'+this.props.user);
+            let responseJson = response.data;
             user = responseJson;
 			this.setState({user});
 		} catch (error) {
