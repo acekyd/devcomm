@@ -15,9 +15,12 @@ DevComm is a directory of developers and designers interested in community activ
 
 - Run composer install or composer update
 - Run npm install
+- Duplicate .env.example and rename your copy to .env
+- Replace the database details with yours
 - php artisan migrate
-- php artisan
 - php artisan passport:install
-- Update config from .env.example in .env
+- Update config in your .env
 - chmod 600 storage/oauth-private.key
 - chmod 600 storage/oauth-public.key
+- php artisan serve
+- npm run watch
