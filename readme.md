@@ -19,7 +19,6 @@ DevComm is a directory of developers and designers interested in community activ
 - Replace the database details in .env with yours
 - php artisan migrate
 - php artisan passport:install
-- Update config in your .env
 - php artisan key:generate -> to generate your app key
 - update your .env file with your app key
 - chmod 600 storage/oauth-private.key
