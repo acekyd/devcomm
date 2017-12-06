@@ -54,7 +54,7 @@ export default class UserGrid extends Component {
 			
 			{this.state.grid == null || this.state.grid.length < 2 ? (
 				<div className='socialShare'>
-					<p>Seems we need more people here from {this.props.state[0].toUpperCase}. Get others to join now and let's build the community.</p>
+					<p>Seems we need more people here from {this.props.state}. Get others to join now and let's build the community.</p>
 					<div className="socialShareIcons">
 						<TwitterShareButton url={shareUrl} title={title}>
 							<TwitterIcon size={64} round />
