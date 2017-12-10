@@ -38,9 +38,9 @@ export default class Navbar extends Component {
 								<li>
 									<Link to="/profile/edit">Edit Profile</Link>
 								</li>
-								{/* <li>
+								<li>
 									<Link to="/logout">Logout</Link>
-								</li> */}
+								</li>
 							</ul>
 						</li>
 					</ul>
