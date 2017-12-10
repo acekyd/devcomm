@@ -40,6 +40,31 @@
           text-align: center;
         }
 
+        .state-grid-item__inner {
+            display: flex;
+            flex-direction: row;
+            text-transform: uppercase;
+            justify-content: space-between;
+
+            .state {
+              font-weight: 800;
+            }
+
+            .details {
+              text-align: right;
+
+              .count {
+                font-size: 50px;
+                line-height: 40px;
+                font-weight: 800;
+              }
+              span {
+                display: table-caption;
+                font-size: 80%;
+              }
+            }
+        }
+
       }
 
       .cta {
