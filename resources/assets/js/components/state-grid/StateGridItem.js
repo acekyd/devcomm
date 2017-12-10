@@ -5,8 +5,11 @@ export default function StateGridItem(props) {
 	return (
 		<div className='state-grid-item'>
 			<div className='state-grid-item__inner'>
-				<p>{props.state}</p>
-				<p>{props.memberCount} {constants.COMMUNITY_MEMBERS}</p>
+				<div className="state">{props.state}</div>
+				<div className="details">
+					<span className="count">{props.memberCount} </span>
+					<span>{constants.COMMUNITY_MEMBERS}</span>
+				</div>
 			</div>
 		</div>
 	);
