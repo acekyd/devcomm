@@ -28,6 +28,7 @@
     "font-awesome": "^4.7.0",
     "jquery": "^3.2.1",
     "react-fontawesome": "^1.6.1",
+    "react-ga": "^2.3.5",
     "react-share": "^1.18.0"
   }
 }
