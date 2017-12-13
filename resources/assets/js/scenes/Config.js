@@ -8,7 +8,7 @@ import { Redirect } from 'react-router-dom';
 export default class Config extends Component {
 	constructor(props) {
 		super(props)
-		this.state = { errors:[], success:false };
+		this.state = { errors:[], success:false, user: null };
 		this.handleSubmit = this.handleSubmit.bind(this);
 	}
 
@@ -50,6 +50,26 @@ export default class Config extends Component {
 		}
 	}
 
+	async componentWillMount() {
+		try {
+			let user = null;
+			let response = await axios.get('/api/profile/', {
+				headers: {
+					'Accept': 'application/json',
+					'Content-Type': 'application/json',
+					'Authorization': 'Bearer '+localStorage.getItem('access_token')
+				}
+			});
+			
+			let responseJson = response.data;
+			user = responseJson;
+			this.setState({user: user});
+		} catch (error) {
+			console.error(`Error thrown in UserGrid component: ${error}`);
+		}
+	}
+
+
 	render() {
 		if (this.state.success) {
 			return <Redirect to='/home'/>
@@ -64,7 +84,7 @@ export default class Config extends Component {
 								<div className="panel-heading">{constants.CONFIGURE_PROFILE}</div>
 								<div className="panel-body">
 									<ErrorMessages errors={this.state.errors}/>
-									<ConfigForm handleSubmit={this.handleSubmit} />
+									{ this.state.user ? <ConfigForm handleSubmit={this.handleSubmit} user={this.state.user} /> : null }
 								</div>
 							</div>
 						</div>

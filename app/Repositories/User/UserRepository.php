@@ -31,8 +31,8 @@ class UserRepository implements UserContract {
 		$user = $this->findOne($id);
 		$smp = new SetModelProperties();
 		$smp->setProps($user, $request);
-		$user->receive_notifications = !is_null($request->receive_notifications);
-		$user->public = !is_null($request->public);
+		$user->receive_notifications = $request->receive_notifications ? 1 : 0;
+		$user->public = $request->public ? 1 : 0;
 		$user->save();
 		return $user;
 	}
