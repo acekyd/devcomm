@@ -34,8 +34,8 @@ class PromotionController extends ApiController
         $promotion->approved = 0;
         $promotion->rsvp_url = $request->rsvp_url;
 
-        
-        //upload attachment if it exists 
+
+        //upload attachment if it exists
         if($request->hasFile('attachment'))
         {
             $file = $request->file('attachment');
@@ -55,7 +55,7 @@ class PromotionController extends ApiController
 
         Mail::to('acekyd01@gmail.com')->send(new NewPromotionRequest($promotion));
 
-        return $this->response->noContent(); 
+        return $this->response->noContent();
     }
 
 }

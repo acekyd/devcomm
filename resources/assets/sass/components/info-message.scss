@@ -1,0 +1,10 @@
+.infoMessage {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    padding: 5em;
+    border: 1px solid #ccc;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    font-size: 25px;
+    text-align: center;
+  }

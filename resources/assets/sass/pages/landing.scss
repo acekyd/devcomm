@@ -1,15 +1,15 @@
 #landing {
-  
+
       .container {
         padding-left: 0;
         padding-right: 0;
       }
-      
+
       .state-grid-container {
         display: flex;
         justify-content: center;
       }
-      
+
       .state-grid {
         width: 80%;
         display: flex;
@@ -17,7 +17,7 @@
         flex-wrap: wrap;
         flex-flow: row wrap;
       }
-      
+
       .state-grid-item {
         border: 1px solid #ccc;
         width: calc((100% / 3) - 30px);
@@ -55,7 +55,7 @@
 
               .count {
                 font-size: 50px;
-                line-height: 40px;
+                line-height: 50px;
                 font-weight: 800;
               }
               span {
@@ -90,7 +90,7 @@
           @media screen and (max-width: 767px) {
             display: none;
           }
-  
+
 
         }
 
