@@ -21,10 +21,10 @@ export default class Jumbotron extends Component {
 		return (
 			<div className='header-container'>
 				<div className='header'>
-					<div className='logo'>
+					<div className='jumbo-text'>
 						<h2>{this.props.text}</h2>
+						{this.renderOnHome()}
 					</div>
-					{this.renderOnHome()}
 				</div>
 			</div>
 		);
