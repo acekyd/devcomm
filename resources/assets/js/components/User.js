@@ -19,7 +19,7 @@ export default class User extends Component {
                     <div className="details">
                         <div className="name-box">
                             <p>I'm <span className="name">{this.state.user.name}</span></p>
-                            <p className="alias">@{this.state.user.alias}</p>    
+                            <p className="alias">@{this.state.user.alias}</p>
                         </div>
                         <div className="entry">
                             <p className="title">Role</p>
@@ -33,27 +33,27 @@ export default class User extends Component {
 
                         <div className="entry">
                             <p className="title">Website</p>
-                            <p className="value"><a href={`//${this.state.user.website}`} target="_blank">{this.state.user.website}</a></p>
+                            <p className="value"><a href={this.state.user.website} target="_blank">{this.state.user.website}</a></p>
                         </div>
                         <div className="icons">
                             { this.state.user.twitter != null ? (
-                                <a href={`//${this.state.user.twitter}`} target="_blank"> 
-                                    <FontAwesome name='twitter' size='2x'  /> 
+                                <a href={this.state.user.twitter} target="_blank">
+                                    <FontAwesome name='twitter' size='2x'  />
                                 </a>
                             ) : null }
                             { this.state.user.facebook != null ? (
-                                <a href={`//${this.state.user.facebook}`} target="_blank"> 
-                                    <FontAwesome name='facebook' size='2x'  /> 
+                                <a href={this.state.user.facebook} target="_blank">
+                                    <FontAwesome name='facebook' size='2x'  />
                                 </a>
                             ) : null }
                             { this.state.user.github != null ? (
-                                <a href={`//${this.state.user.github}`} target="_blank"> 
-                                    <FontAwesome name='github' size='2x'  /> 
+                                <a href={this.state.user.github} target="_blank">
+                                    <FontAwesome name='github' size='2x'  />
                                 </a>
                             ) : null }
-                            
+
                         </div>
-                        
+
                         <div className="state-link">
                             <Link to={"/location/"+this.state.user.location}>&larr; See other community members in {this.state.user.location} </Link>
                         </div>
@@ -63,7 +63,7 @@ export default class User extends Component {
 		} else return null
 	}
 
-    
+
     async componentWillMount() {
 		try {
 			let user = [];
@@ -75,7 +75,7 @@ export default class User extends Component {
 			console.error(`Error thrown in User component: ${error}`);
 		}
     }
-    
+
 	render() {
 		return (
 			<div className='user-container'>
