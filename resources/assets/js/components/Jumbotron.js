@@ -3,6 +3,11 @@ import { constants } from '../config';
 import { Link } from 'react-router-dom';
 
 export default class Jumbotron extends Component {
+	constructor(props) {
+		super(props);
+		this.handleSearchChange = this.handleSearchChange.bind(this);
+	}
+
 	renderOnHome() {
 		// if (this.props.renderOnHome == true) {
 			return (
@@ -17,6 +22,23 @@ export default class Jumbotron extends Component {
 		// } else return null
 	}
 
+	handleSearchChange(e) {
+		const target = e.target;
+		const value = target.value;
+		this.props.setKeyword(target.value);
+	}
+
+	renderOnSearch() {
+		if(this.props.search == true)
+		{
+			return (
+				<div className='search'>
+					<input type="text" name="search" className='form-control' placeholder="Find community member" value={this.props.searchKeyword} onChange={this.handleSearchChange}/>
+				</div>
+			);
+		}
+	}
+
 	render() {
 		return (
 			<div className='header-container'>
@@ -24,6 +46,7 @@ export default class Jumbotron extends Component {
 					<div className='jumbo-text'>
 						<h2>{this.props.text}</h2>
 						{this.renderOnHome()}
+						{this.renderOnSearch()}
 					</div>
 				</div>
 			</div>
