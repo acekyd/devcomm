@@ -19,7 +19,7 @@ class ConfigController extends ApiController
     {
         $config['data'] = config('data');
         $config['data']['roles'] = config('devcommroles.roles');
-        
+
         return response()->json($config);
 	  }
 }
