@@ -1,225 +1,64 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-    <meta name="viewport" content="width=device-width"/>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-    <title>DevComm - {{ $event_title }}</title>
-    <style type="text/css">
-        * {
-            margin: 0;
-            padding: 0;
-            font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
-            font-size: 100%;
-            line-height: 1.6;
-        }
-
-        img {
-            max-width: 100%;
-        }
-
-        body {
-            background-color: #e4e4e4;
-            -webkit-font-smoothing: antialiased;
-            -webkit-text-size-adjust: none;
-            width: 100% !important;
-            height: 100%;
-        }
-
-        a {
-            color: #348eda;
-        }
-
-        .btn-primary {
-            text-decoration: none;
-            color: #FFF;
-            background-color: #348eda;
-            border: solid #348eda;
-            border-width: 10px 20px;
-            line-height: 2;
-            font-weight: bold;
-            margin-right: 10px;
-            text-align: center;
-            cursor: pointer;
-            display: inline-block;
-            border-radius: 25px;
-        }
-
-        .btn-secondary {
-            text-decoration: none;
-            color: #FFF;
-            background-color: #aaa;
-            border: solid #aaa;
-            border-width: 10px 20px;
-            line-height: 2;
-            font-weight: bold;
-            margin-right: 10px;
-            text-align: center;
-            cursor: pointer;
-            display: inline-block;
-            border-radius: 25px;
-        }
-
-        .btn-success {
-            text-decoration: none;
-            color: #FFF;
-            background-color: #449D44;
-            border: solid #449D44;
-            border-width: 10px 20px;
-            line-height: 2;
-            font-weight: bold;
-            margin-right: 10px;
-            text-align: center;
-            cursor: pointer;
-            display: inline-block;
-            border-radius: 25px;
-        }
-
-        .btn-danger {
-            text-decoration: none;
-            color: #FFF;
-            background-color: #C9302C;
-            border: solid #C9302C;
-            border-width: 10px 20px;
-            line-height: 2;
-            font-weight: bold;
-            margin-right: 10px;
-            text-align: center;
-            cursor: pointer;
-            display: inline-block;
-            border-radius: 25px;
-        }
-
-        .last {
-            margin-bottom: 0;
-        }
-
-        .first {
-            margin-top: 0;
-        }
-
-        .padding {
-            padding: 10px 0;
-        }
-
-        table.body-wrap {
-            width: 100%;
-            padding: 20px;
-        }
-
-        table.body-wrap .container {
-            border: 1px solid #f0f0f0;
-        }
-
-        table.footer-wrap {
-            width: 100%;
-            clear: both !important;
-        }
-
-        .footer-wrap .container p {
-            font-size: 12px;
-            color: #666;
-
-        }
-
-        table.footer-wrap a {
-            color: #999;
-        }
-
-        h1, h2, h3 {
-            font-family: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
-            line-height: 1.1;
-            margin-bottom: 15px;
-            color: #000;
-            margin: 40px 0 10px;
-            line-height: 1.2;
-            font-weight: 200;
-        }
-
-        h1 {
-            font-size: 36px;
-        }
-
-        h2 {
-            font-size: 28px;
-        }
-
-        h3 {
-            font-size: 22px;
-        }
-
-        p, ul, ol {
-            margin-bottom: 10px;
-            font-weight: normal;
-            font-size: 14px;
-        }
-
-        ul li, ol li {
-            margin-left: 5px;
-            list-style-position: inside;
-        }
-
-        .container {
-            display: block !important;
-            max-width: 600px !important;
-            margin: 0 auto !important; /* makes it centered */
-            clear: both !important;
-        }
-
-        .body-wrap .container {
-            padding: 20px;
-        }
-
-        .content {
-            max-width: 600px;
-            margin: 0 auto;
-            display: block;
-        }
-
-        .content table {
-            width: 100%;
-        }
-    </style>
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" style="margin: 0;padding: 0;font-family: &quot;Helvetica Neue&quot;, &quot;Helvetica&quot;, Helvetica, Arial, sans-serif;font-size: 100%;line-height: 1.6;">
+<head style="margin: 0;padding: 0;font-family: &quot;Helvetica Neue&quot;, &quot;Helvetica&quot;, Helvetica, Arial, sans-serif;font-size: 100%;line-height: 1.6;">
+<meta name="viewport" content="width=device-width" style="margin: 0;padding: 0;font-family: &quot;Helvetica Neue&quot;, &quot;Helvetica&quot;, Helvetica, Arial, sans-serif;font-size: 100%;line-height: 1.6;">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" style="margin: 0;padding: 0;font-family: &quot;Helvetica Neue&quot;, &quot;Helvetica&quot;, Helvetica, Arial, sans-serif;font-size: 100%;line-height: 1.6;">
+<title style="margin: 0;padding: 0;font-family: &quot;Helvetica Neue&quot;, &quot;Helvetica&quot;, Helvetica, Arial, sans-serif;font-size: 100%;line-height: 1.6;">DevComm - A directory of Nigerian techies passionate about community.</title>
 </head>
 
-<body bgcolor="#f6f6f6">
-<table class="body-wrap">
-    <tr>
-        <td></td>
-        <td class="container" bgcolor="#FFFFFF">
-            <div class="content">
-                <table>
-                    <tr>
-                        <td align="center">
-                            <img src="https://demo.org/images/Client-Logo.png" alt="Client"/>
-                        </td>
-                    </tr>
-                    @yield('content')
-                </table>
-            </div>
-        </td>
-        <td></td>
-    </tr>
-</table>
-<table class="footer-wrap">
-    <tr>
-        <td></td>
-        <td class="container">
-            <div class="content">
-                <table>
-                    <tr>
-                        <td align="center">
-                            <p>Email Footer</p>
+<body bgcolor="#f6f6f6" style="margin: 0;padding: 0;font-family: &quot;Helvetica Neue&quot;, &quot;Helvetica&quot;, Helvetica, Arial, sans-serif;font-size: 100%;line-height: 1.6;background-color: #e4e4e4;-webkit-font-smoothing: antialiased;-webkit-text-size-adjust: none;height: 100%;width: 100% !important;">
+<table class="body-wrap" style="margin: 0;padding: 20px;font-family: &quot;Helvetica Neue&quot;, &quot;Helvetica&quot;, Helvetica, Arial, sans-serif;font-size: 100%;line-height: 1.6;width: 100%;">
+<tr style="margin: 0;padding: 0;font-family: &quot;Helvetica Neue&quot;, &quot;Helvetica&quot;, Helvetica, Arial, sans-serif;font-size: 100%;line-height: 1.6;">
+<td style="margin: 0;padding: 0;font-family: &quot;Helvetica Neue&quot;, &quot;Helvetica&quot;, Helvetica, Arial, sans-serif;font-size: 100%;line-height: 1.6;"></td>
+<td class="container" bgcolor="#FFFFFF" style="margin: 0 auto !important;padding: 20px;font-family: &quot;Helvetica Neue&quot;, &quot;Helvetica&quot;, Helvetica, Arial, sans-serif;font-size: 100%;line-height: 1.6;border: 1px solid #f0f0f0;display: block !important;max-width: 600px !important;clear: both !important;">
+    <div class="content" style="margin: 0 auto;padding: 0;font-family: &quot;Helvetica Neue&quot;, &quot;Helvetica&quot;, Helvetica, Arial, sans-serif;font-size: 100%;line-height: 1.6;max-width: 600px;display: block;">
+        <table style="margin: 0;padding: 0;font-family: &quot;Helvetica Neue&quot;, &quot;Helvetica&quot;, Helvetica, Arial, sans-serif;font-size: 100%;line-height: 1.6;width: 100%;">
+            <tr style="margin: 0;padding: 0;font-family: &quot;Helvetica Neue&quot;, &quot;Helvetica&quot;, Helvetica, Arial, sans-serif;font-size: 100%;line-height: 1.6;">
+                <td align="center" style="margin: 0;padding: 0;font-family: &quot;Helvetica Neue&quot;, &quot;Helvetica&quot;, Helvetica, Arial, sans-serif;font-size: 100%;line-height: 1.6;">
+                    <img src="{{ asset('images/logo.png') }}" alt="DevComm.co" style="margin: 0;padding: 0;font-family: &quot;Helvetica Neue&quot;, &quot;Helvetica&quot;, Helvetica, Arial, sans-serif;font-size: 100%;line-height: 1.6;width: 15%;min-width:80px;">
+                </td>
+            </tr>
+            <tr style="margin: 0;padding: 0;font-family: &quot;Helvetica Neue&quot;, &quot;Helvetica&quot;, Helvetica, Arial, sans-serif;font-size: 100%;line-height: 1.6;">
+                <td style="margin: 0;padding: 0;font-family: &quot;Helvetica Neue&quot;, &quot;Helvetica&quot;, Helvetica, Arial, sans-serif;font-size: 100%;line-height: 1.6;">
 
-                            <p><strong>ALL EMAILS ARE TO BE CONSIDERED CONFIDENTIAL UNLESS OTHERWISE
-                                    NOTED</strong></p>
-                        </td>
-                    </tr>
-                </table>
-            </div>
-        </td>
-        <td></td>
-    </tr>
+                    <h1 style="margin: 40px 0 10px;padding: 0;font-family: &quot;Helvetica Neue&quot;, Helvetica, Arial, &quot;Lucida Grande&quot;, sans-serif;font-size: 25px;line-height: 1.2;margin-bottom: 15px;color: #000;font-weight: 200;">Hello,</h1>
+
+                    <p style="margin: 0;padding: 0;font-family: &quot;Helvetica Neue&quot;, &quot;Helvetica&quot;, Helvetica, Arial, sans-serif;font-size: 14px;line-height: 1.6;margin-bottom: 10px;font-weight: normal;">We have received a new promotion you might be interested in.</p>
+
+                    <p style="margin: 0;padding: 0;font-family: &quot;Helvetica Neue&quot;, &quot;Helvetica&quot;, Helvetica, Arial, sans-serif;font-size: 14px;line-height: 1.6;margin-bottom: 10px;font-weight: normal;">Please find details below:</p>
+
+                        <p><b> {{ $promotion->title }}</b></p>
+                        <p> {{ $promotion->content }}</p>
+                        <p><b>RSVP URL:</b> {{ $promotion->rsvp_url }}</p>
+                        <p><b>Organizer:</b> {{ $promotion->name }}</p>
+                        <img src="{{$promotion->attachment}}" alt="{{ $promotion->title }}" style="max-width:100%;height:auto;"/>
+                </td>
+            </tr>
+        </table>
+    </div>
+</td>
+<td style="margin: 0;padding: 0;font-family: &quot;Helvetica Neue&quot;, &quot;Helvetica&quot;, Helvetica, Arial, sans-serif;font-size: 100%;line-height: 1.6;"></td>
+</tr>
+</table>
+<table class="footer-wrap" style="margin: 0;padding: 0;font-family: &quot;Helvetica Neue&quot;, &quot;Helvetica&quot;, Helvetica, Arial, sans-serif;font-size: 100%;line-height: 1.6;width: 100%;clear: both !important;">
+<tr style="margin: 0;padding: 0;font-family: &quot;Helvetica Neue&quot;, &quot;Helvetica&quot;, Helvetica, Arial, sans-serif;font-size: 100%;line-height: 1.6;">
+<td style="margin: 0;padding: 0;font-family: &quot;Helvetica Neue&quot;, &quot;Helvetica&quot;, Helvetica, Arial, sans-serif;font-size: 100%;line-height: 1.6;"></td>
+<td class="container" style="margin: 0 auto !important;padding: 0;font-family: &quot;Helvetica Neue&quot;, &quot;Helvetica&quot;, Helvetica, Arial, sans-serif;font-size: 100%;line-height: 1.6;display: block !important;max-width: 600px !important;clear: both !important;">
+    <div class="content" style="margin: 0 auto;padding: 0;font-family: &quot;Helvetica Neue&quot;, &quot;Helvetica&quot;, Helvetica, Arial, sans-serif;font-size: 100%;line-height: 1.6;max-width: 600px;display: block;">
+        <table style="margin: 0;padding: 0;font-family: &quot;Helvetica Neue&quot;, &quot;Helvetica&quot;, Helvetica, Arial, sans-serif;font-size: 100%;line-height: 1.6;width: 100%;">
+            <tr style="margin: 0;padding: 0;font-family: &quot;Helvetica Neue&quot;, &quot;Helvetica&quot;, Helvetica, Arial, sans-serif;font-size: 100%;line-height: 1.6;">
+                <td align="center" style="margin: 0;padding: 0;font-family: &quot;Helvetica Neue&quot;, &quot;Helvetica&quot;, Helvetica, Arial, sans-serif;font-size: 100%;line-height: 1.6;">
+                    <!-- <p>Email Footer</p> -->
+
+                    <p style="margin: 0;padding: 0;font-family: &quot;Helvetica Neue&quot;, &quot;Helvetica&quot;, Helvetica, Arial, sans-serif;font-size: 12px;line-height: 1.6;margin-bottom: 10px;font-weight: normal;color: #666;"><strong style="margin: 0;padding: 0;font-family: &quot;Helvetica Neue&quot;, &quot;Helvetica&quot;, Helvetica, Arial, sans-serif;font-size: 100%;line-height: 1.6;">You are receiving this mail because you are signed up on Devcomm.co</strong></p>
+                </td>
+            </tr>
+        </table>
+    </div>
+</td>
+<td style="margin: 0;padding: 0;font-family: &quot;Helvetica Neue&quot;, &quot;Helvetica&quot;, Helvetica, Arial, sans-serif;font-size: 100%;line-height: 1.6;"></td>
+</tr>
 </table>
 </body>
 </html>
