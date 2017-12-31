@@ -79,7 +79,7 @@ class PromotionController extends CrudController{
 								return $query->where('role', $roles);
 						})
 						->select('email', 'name', 'location', 'role')
-						->get()->KeyBy('email')->all();
+						->get()->KeyBy('email')->toArray();
 
 		\Mailgun::send('emails.promotion', ['promotion' => $promotion], function ($message) use ($users, $promotion) {
 			$message->to($users)->subject('DevComm: '.$promotion->title);
