@@ -54,12 +54,12 @@ php artisan migrate
 php artisan passport:install
 ```
 
-###Generate a new Application Key
+### Generate a new Application Key
 ```bash
 php artisan key:generate
 ```
 
-###Change Access Permissions
+### Change Access Permissions
 ```bash
 chmod 600 storage/oauth-private.key
 chmod 600 storage/oauth-public.key
