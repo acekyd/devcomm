@@ -21,10 +21,10 @@ export default class ConfigForm extends Component {
 	handleSubmit(e) {
 		e.preventDefault();
 		let payload = { alias:this.state.alias, location:this.state.location, role:this.state.role, twitter:this.state.twitter, facebook:this.state.facebook, website:this.state.website, github:this.state.github, receive_notifications:this.state.receive_notifications, public:this.state.public };
-		
+
 		document.getElementById('submitForm').setAttribute('disabled', 'true');
 		this.props.handleSubmit(payload);
-		
+
 	}
 
 	render() {
@@ -32,6 +32,7 @@ export default class ConfigForm extends Component {
 			return (
 				<form className="form-horizontal" onSubmit={this.handleSubmit}>
 					<img className="avatar" src={this.props.user.avatar} alt={this.props.user.name} />
+					<p className="gravatar-text"><small>*Avatars are fetched from <a href="https://gravatar.com" target="_blank">Gravatar</a></small></p>
 					<div className="form-group">
 						<label htmlFor="alias" className="col-md-4 control-label">Alias</label>
 						<div className="col-md-6">
@@ -137,7 +138,7 @@ export default class ConfigForm extends Component {
 						</div>
 					</div>
 				</form>
-			);	
+			);
 		}
 		return null;
 	}
