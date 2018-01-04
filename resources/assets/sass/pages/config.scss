@@ -1,9 +1,14 @@
 
-img.avatar 
+img.avatar
 {
     display: block;
     margin: auto;
     margin-bottom: 2em;
     border-radius: 50%;
     width: 150px;
+}
+
+p.gravatar-text {
+    margin-top: -2em;
+    text-align: center;
 }

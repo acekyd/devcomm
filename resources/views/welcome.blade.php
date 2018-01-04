@@ -7,7 +7,14 @@
         <title>Dev Community - DevComm.co</title>
         <link href="{{asset('css/app.css')}}" rel="stylesheet" type="text/css">
         <meta name="csrf-token" content="{{ csrf_token() }}">
-        <link rel="shortcut icon" type="image/png" href="/images/logo.png"/>
+        <link rel="shortcut icon" type="image/png" href="{{ asset('images/logo.png') }}"/>
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:site" content="@ace_kyd">
+        <meta name="twitter:title" content="DevComm - DevComm.co">
+        <meta name="twitter:description" content="Identify and connect with members of the community around you and get access to opportunities and event information regardless of where you are.">
+        <meta name="twitter:creator" content="@ace_kyd">
+        <meta name="twitter:image" content="{{ asset('images/header.jpg') }}">
+        <meta name="twitter:domain" content="devcomm.co">
     </head>
     <body>
         <div id="app"></div>
