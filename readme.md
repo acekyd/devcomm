@@ -11,17 +11,65 @@ DevComm is a directory of developers and designers interested in community activ
 - Abati Adewale (@acekyd)
 - Victor Olowe (@1hndrxx)
 
-## Setup
+## Getting Started
 
+### Install Dependencies
 - Run composer install or composer update
-- Run npm install
-- Duplicate .env.example and rename your copy to .env
-- Replace the database details in .env with yours
-- php artisan migrate
-- php artisan passport:install
-- php artisan key:generate -> to generate your app key
-- update your .env file with your app key
-- chmod 600 storage/oauth-private.key
-- chmod 600 storage/oauth-public.key
-- php artisan serve
-- npm run watch
+```bash
+composer install
+```
+OR 
+```bash
+composer update 
+```
+
+### Install dependencies in `package.json`
+```bash
+npm install
+```
+
+### Database Setup
+
+Duplicate .env.example and rename your copy to .env and proceed to replace the database details in
+`.env` file with yours.
+
+```bash
+
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=Your-database-name
+DB_USERNAME=Your-database-username
+DB_PASSWORD=Your-database-password
+
+```
+
+### Migrating and Creating Table
+```bash
+php artisan migrate
+```
+
+### Install Laravel Passport
+```bash
+php artisan passport:install
+```
+
+### Generate a new Application Key
+```bash
+php artisan key:generate
+```
+
+### Change Access Permissions
+```bash
+chmod 600 storage/oauth-private.key
+chmod 600 storage/oauth-public.key
+```
+
+### Run the Application
+```bash
+php artisan serve
+```
+### Run and compile Script
+```bash
+npm run watch
+```
