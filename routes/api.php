@@ -20,6 +20,10 @@ $api->version('v1', function ($api) {
 		return ['Ace baba!!'];
 	});
 
+	$api->get('/', function () {
+		return ['Ace king!!'];
+	});
+
 	$api->post('/login', 'App\Http\Controllers\AuthController@login');
 	$api->post('/signup', 'App\Http\Controllers\AuthController@signup');
 	$api->post('/recovery', 'App\Http\Controllers\AuthController@recovery');
@@ -34,10 +38,10 @@ $api->version('v1', function ($api) {
 
 	//get all config
 	$api->get('/config', 'App\Http\Controllers\ConfigController@index');
-	
+
 	//get a particular user's profile by alias
 	$api->get('/profile/{alias}', 'App\Http\Controllers\UserController@show');
-	
+
 
 
 	$api->group(['middleware' => 'auth:api'], function ($api) {
