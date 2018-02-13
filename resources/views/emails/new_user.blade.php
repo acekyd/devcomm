@@ -1,4 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" style="margin: 0;padding: 0;font-family: &quot;Helvetica Neue&quot;, &quot;Helvetica&quot;, Helvetica, Arial, sans-serif;font-size: 100%;line-height: 1.6;">
 
@@ -29,6 +29,8 @@
                                     <p style="margin: 0;padding: 0;font-family: &quot;Helvetica Neue&quot;, &quot;Helvetica&quot;, Helvetica, Arial, sans-serif;font-size: 14px;line-height: 1.6;margin-bottom: 10px;font-weight: normal;">Thank you for joining us on the journey to a connected and easily accessible community of tech enthusiasts across Nigeria.</p>
                                     <p style="margin: 0;padding: 0;font-family: &quot;Helvetica Neue&quot;, &quot;Helvetica&quot;, Helvetica, Arial, sans-serif;font-size: 14px;line-height: 1.6;margin-bottom: 10px;font-weight: normal;">With DevComm, you can get access to various communities across the country and also get notifications of events and opportunities tailored just for you.</p>
                                     <p style="margin: 0;padding: 0;font-family: &quot;Helvetica Neue&quot;, &quot;Helvetica&quot;, Helvetica, Arial, sans-serif;font-size: 14px;line-height: 1.6;margin-bottom: 10px;font-weight: normal;"><a href="http://devcomm.co/" style="margin: 0;padding: 0;font-family: &quot;Helvetica Neue&quot;, &quot;Helvetica&quot;, Helvetica, Arial, sans-serif;font-size: 100%;line-height: 1.6;color: #348eda;">Check out communities in states across Nigeria now.</a></p>
+
+                                    <p style="margin: 5% 10%;padding: 0;font-family: &quot;Helvetica Neue&quot;, &quot;Helvetica&quot;, Helvetica, Arial, sans-serif;font-size: 12px;line-height: 1.6;margin-bottom: 10px;font-weight: normal; text-align:center;">As a signup gift, if you use GitHub, go ahead to redeem <a href="https://github.com/redeem/GithubXingressive">this coupon "GitHubXIngressive"</a> for free private repos for a year worth $7 a month. 🔥🔥</p>
                                 </td>
                             </tr>
                         </table>
