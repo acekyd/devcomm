@@ -24,12 +24,12 @@
                 <p style="margin: 0;padding: 0;font-family: &quot;Helvetica Neue&quot;, &quot;Helvetica&quot;, Helvetica, Arial, sans-serif;font-size: 14px;line-height: 1.6;margin-bottom: 10px;font-weight: normal;">We have received a new promotion request for DevComm.</p>
 
                 <p style="margin: 0;padding: 0;font-family: &quot;Helvetica Neue&quot;, &quot;Helvetica&quot;, Helvetica, Arial, sans-serif;font-size: 14px;line-height: 1.6;margin-bottom: 10px;font-weight: normal;">Please find details below</p>
-                
+
                     <img src="{{$promotion->attachment}}" alt="{{ $promotion->title }}" />
                     <p><b>Organizer Name:</b> {{ $promotion->name }}</p>
                     <p><b>Organizer Email:</b> {{ $promotion->email }}</p>
                     <p><b>Title:</b> {{ $promotion->title }}</p>
-                    <p><b>Content:</b> {{ $promotion->content }}</p>
+                    <p><b>Content:</b> <p> {!! nl2br($promotion->content) !!}</p></p>
                     <p><b>RSVP URL:</b> {{ $promotion->rsvp_url }}</p>
                     <p><b>attachment:</b> <img src="{{$promotion->attachment}}" alt="{{ $promotion->title }}" />
 

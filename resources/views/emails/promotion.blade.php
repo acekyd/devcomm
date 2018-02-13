@@ -29,7 +29,7 @@
                     <p style="margin: 0;padding: 0;font-family: &quot;Helvetica Neue&quot;, &quot;Helvetica&quot;, Helvetica, Arial, sans-serif;font-size: 14px;line-height: 1.6;margin-bottom: 10px;font-weight: normal;">Please find details below:</p>
 
                         <p><b> {{ $promotion->title }}</b></p>
-                        <p> {{ $promotion->content }}</p>
+                        <p> {!! nl2br($promotion->content) !!}</p>
                         <p><b>RSVP URL:</b> {{ $promotion->rsvp_url }}</p>
                         <p><b>Organizer:</b> {{ $promotion->name }}</p>
                         <img src="{{$promotion->attachment}}" alt="{{ $promotion->title }}" style="max-width:100%;height:auto;"/>
