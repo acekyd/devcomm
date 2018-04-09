@@ -20,7 +20,7 @@
         <div id="app"></div>
         <script src="{{asset('js/app.js')}}" ></script>
         <footer class="footer">
-            &spades; &copy DevComm 2017. Inspired by <a href="http://tribute.imogiemubarak.com" target="_blank">#AIM</a>. Contribute on <a href="https://github.com/acekyd/devcomm" target="_blank">GitHub</a>
+            &spades; &copy; DevComm <?php echo date('Y'); ?>. Inspired by <a href="http://tribute.imogiemubarak.com" target="_blank">#AIM</a>. Contribute on <a href="https://github.com/acekyd/devcomm" target="_blank">GitHub</a>
         </footer>
     </body>
 </html>
