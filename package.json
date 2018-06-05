@@ -26,6 +26,7 @@
   },
   "dependencies": {
     "font-awesome": "^4.7.0",
+    "node": "^10.3.0",
     "react-fontawesome": "^1.6.1",
     "react-ga": "^2.4.1",
     "react-share": "^1.19.1"
