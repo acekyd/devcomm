@@ -75,4 +75,4 @@ php artisan serve
 npm run watch
 ```
 
-If you are having any issues properly running `npm run watch, could be as a result of different node versions. Run `npm install -s node`
+If you are having any issues properly running `npm run watch`, could be as a result of different node versions. Run `npm install -s node`
