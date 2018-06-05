@@ -18,9 +18,9 @@ DevComm is a directory of developers and designers interested in community activ
 ```bash
 composer install
 ```
-OR 
+OR
 ```bash
-composer update 
+composer update
 ```
 
 ### Install dependencies in `package.json`
@@ -53,6 +53,7 @@ php artisan migrate
 ```bash
 php artisan passport:install
 ```
+Add keys generated to .env
 
 ### Generate a new Application Key
 ```bash
@@ -73,3 +74,5 @@ php artisan serve
 ```bash
 npm run watch
 ```
+
+If you are having any issues properly running `npm run watch, could be as a result of different node versions. Run `npm install -s node`
