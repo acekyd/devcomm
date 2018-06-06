@@ -76,3 +76,6 @@ npm run watch
 ```
 
 If you are having any issues properly running `npm run watch`, could be as a result of different node versions. Run `npm install -s node`
+
+Home page designs
+https://www.figma.com/file/MYpNNDsSPLVPXquHR0Jq5NlE/Devcomm
