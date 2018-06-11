@@ -1,14 +1,10 @@
 import React, { Component } from 'react';
-import { Navbar, Jumbotron } from '../components';
+import { Navbar } from '../components';
 import { constants } from '../config';
 
-export default class Profile extends Component {
-	constructor(props) {
-		super(props);
-	}
+export default class NotFound extends Component {
 
 	render() {
-		const alias = this.props.match.params.page;
 		return (
 			<div id='landing'>
 				<Navbar renderOnHome={true}/>
