@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Navbar, Jumbotron, UserGrid } from '../components';
+import { Navbar, Jumbotron, UserGrid, Authenticated } from '../components';
 import { constants } from '../config';
 import { Redirect } from 'react-router-dom';
 
@@ -16,7 +16,7 @@ export default class Home extends Component {
 
 	render() {
 		let user = JSON.parse(localStorage.getItem('user'));
-		if (user.alias == null) {
+		if (user == null || user.alias == null) {
 			return <Redirect to='/profile/edit'/>
 		}
 		let toggleSearch = true;
@@ -24,6 +24,7 @@ export default class Home extends Component {
 		if(state==null) state = user.location
 		return (
 			<div id='landing'>
+				<Authenticated />
 				<Navbar renderOnHome={true}/>
 				<Jumbotron text={constants.JUMBOTRON_TEXT} search={toggleSearch} searchKeyword={this.state.keyword} setKeyword={this.setKeyword}/>
 				<div className='user-grid-container'>
