@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Navbar, ErrorMessages } from '../components';
+import { Navbar, ErrorMessages, Authenticated } from '../components';
 import { ConfigForm } from '../forms';
 import { constants } from '../config';
 import { Redirect } from 'react-router-dom';
@@ -29,16 +29,16 @@ export default class Config extends Component {
 			if (!response.ok) {
 				let errors = []
 				for (var error in Object.keys(responseJson.errors) ) {
-					
+
 					errors.push(
 						<p>{responseJson.errors[Object.keys(responseJson.errors)[error]][0]}</p>
 					);
 				}
 				this.setState({errors: errors});
 				document.getElementById('submitForm').removeAttribute('disabled');
-			
+
 			} else {
-				
+
 				//Store updated data in local storage
 				localStorage.setItem('user', JSON.stringify(responseJson));
 				this.setState({success:true});
@@ -60,7 +60,7 @@ export default class Config extends Component {
 					'Authorization': 'Bearer '+localStorage.getItem('access_token')
 				}
 			});
-			
+
 			let responseJson = response.data;
 			user = responseJson;
 			this.setState({user: user});
@@ -76,6 +76,7 @@ export default class Config extends Component {
 		}
 		return (
 			<div>
+				<Authenticated />
 				<Navbar renderOnHome={true}/>
 				<div className="container">
 					<div className="row">

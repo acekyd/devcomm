@@ -4,6 +4,7 @@ import { StateGrid } from './state-grid';
 import { UserGrid } from './user-grid';
 import User from './User';
 import ErrorMessages from './ErrorMessages';
+import Authenticated from './Authenticated';
 import 'font-awesome/css/font-awesome.min.css';
 
 export {
@@ -12,5 +13,6 @@ export {
 	StateGrid,
 	User,
 	UserGrid,
-	ErrorMessages
+	ErrorMessages,
+	Authenticated
 }
