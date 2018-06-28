@@ -108,33 +108,34 @@ export default class UserGrid extends Component {
 		}
 
 		return (
-			<div className='user-grid'>
-				{this.state.grid}
-				{this.state.grid == null || this.state.grid.length < 2 ? (
-					<div className='socialShare'>
-						<p>Seems we need more people here. Get others to join now and let's build the community.</p>
-						<div className="socialShareIcons">
-							<TwitterShareButton url={shareUrl} title={title}>
-								<TwitterIcon size={64} round />
-							</TwitterShareButton>
-							<FacebookShareButton url={shareUrl} quote={title}>
-								<FacebookIcon size={64} round />
-							</FacebookShareButton>
-							<WhatsappShareButton url={shareUrl} title={title} separator=":: ">
-								<WhatsappIcon size={64} round />
-							</WhatsappShareButton>
-						</div>
-					</div>
-				): null}
-
-				<h4>Currently showing users in&nbsp;
+				<div className='user-grid'>
+					<div className='switchLocation'>Currently showing users in&nbsp;
 					<select value={this.props.state} name="location" onChange={this.handleLocationChange}>
 							{this.state.config.data.locations.map(function (location) {
 								return <option value={location}>{location}</option>;
 							})}
-					</select>
-				&nbsp;State</h4>
-			</div>
+						</select>
+						&nbsp;State</div>
+
+					{this.state.grid}
+					{this.state.grid == null || this.state.grid.length < 2 ? (
+						<div className='socialShare'>
+							<p>Seems we need more people here. Get others to join now and build the community.</p>
+							<div className="socialShareIcons">
+								<TwitterShareButton url={shareUrl} title={title}>
+									<TwitterIcon size={64} round />
+								</TwitterShareButton>
+								<FacebookShareButton url={shareUrl} quote={title}>
+									<FacebookIcon size={64} round />
+								</FacebookShareButton>
+								<WhatsappShareButton url={shareUrl} title={title} separator=":: ">
+									<WhatsappIcon size={64} round />
+								</WhatsappShareButton>
+							</div>
+						</div>
+					) : null}
+				</div>
+
 		);
 	}
 }
