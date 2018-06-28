@@ -2,7 +2,7 @@
     display: flex;
     justify-content: center;
   }
-  
+
   .user-grid {
     width: 80%;
     display: flex;
@@ -10,7 +10,16 @@
     flex-wrap: wrap;
     flex-flow: row wrap;
   }
-  
+
+  .switchLocation {
+    flex: 1 100%;
+    align-content: center;
+    align-items: center;
+    padding: 5px;
+    display: flex;
+    margin: 10px;
+    justify-content: center;
+  }
   .user-grid-item {
     align-items: center;
     padding: 5px;
