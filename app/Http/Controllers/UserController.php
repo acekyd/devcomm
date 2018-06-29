@@ -21,7 +21,7 @@ class UserController extends ApiController
 	}
 
 	public function index(Request $request) {
-		
+
 		return response()->json($request->user());
 
 	}
@@ -45,12 +45,15 @@ class UserController extends ApiController
 			'role' => $user->role
 		];
 
-		return response()->json($data); 
+		return response()->json($data);
 	}
 
 	public function find(Request $request)
 	{
-		$users = User::where('name', 'LIKE', "%$request->keywords%")->orWhere('alias', 'LIKE', "%$request->keywords%")->get();
+		$users = User::where('name', 'LIKE', "%$request->keywords%")
+						->orWhere('alias', 'LIKE', "%$request->keywords%")
+						->orWhere('skills', 'LIKE', "%$request->keywords%")
+						->get();
 
 		return response()->json($users);
 	}
