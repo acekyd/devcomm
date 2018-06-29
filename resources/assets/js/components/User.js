@@ -20,6 +20,7 @@ export default class User extends Component {
                         <div className="name-box">
                             <p>I'm <span className="name">{this.state.user.name}</span></p>
                             <p className="alias">@{this.state.user.alias}</p>
+                            <p className="bio">{this.state.user.bio}</p>
                         </div>
                         <div className="entry">
                             <p className="title">Role</p>
@@ -34,6 +35,10 @@ export default class User extends Component {
                         <div className="entry">
                             <p className="title">Website</p>
                             <p className="value"><a href={this.state.user.website} target="_blank">{this.state.user.website}</a></p>
+                        </div>
+                        <div className="entry">
+                            <p className="title">Skills</p>
+                            <p className="value">{this.state.user.skills}</p>
                         </div>
                         <div className="icons">
                             { this.state.user.twitter != null ? (

@@ -33,7 +33,7 @@ export default class Jumbotron extends Component {
 		{
 			return (
 				<div className='search'>
-					<input type="text" name="search" className='form-control' placeholder="Find community member" value={this.props.searchKeyword} onChange={this.handleSearchChange}/>
+					<input type="text" name="search" className='form-control' placeholder="Find community member or skillset" value={this.props.searchKeyword} onChange={this.handleSearchChange}/>
 				</div>
 			);
 		}

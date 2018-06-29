@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 export default class ConfigForm extends Component {
 	constructor(props) {
 		super(props);
-		this.state = { alias:this.props.user.alias, location:this.props.user.location, role:this.props.user.role, twitter:this.props.user.twitter, facebook:this.props.user.facebook, website:this.props.user.website, github:this.props.user.github, receive_notifications:this.props.user.receive_notifications, public:this.props.user.public };
+		this.state = { alias:this.props.user.alias, location:this.props.user.location, role:this.props.user.role, bio:this.props.user.bio, skills:this.props.user.skills, twitter:this.props.user.twitter, facebook:this.props.user.facebook, website:this.props.user.website, github:this.props.user.github, receive_notifications:this.props.user.receive_notifications, public:this.props.user.public };
 		this.handleInputChange = this.handleInputChange.bind(this);
 		this.handleSubmit = this.handleSubmit.bind(this);
 		this.state.config = JSON.parse(localStorage.getItem('config'));
@@ -20,7 +20,7 @@ export default class ConfigForm extends Component {
 
 	handleSubmit(e) {
 		e.preventDefault();
-		let payload = { alias:this.state.alias, location:this.state.location, role:this.state.role, twitter:this.state.twitter, facebook:this.state.facebook, website:this.state.website, github:this.state.github, receive_notifications:this.state.receive_notifications, public:this.state.public };
+		let payload = { alias:this.state.alias, location:this.state.location, role:this.state.role, bio:this.state.bio, skills:this.state.skills, twitter:this.state.twitter, facebook:this.state.facebook, website:this.state.website, github:this.state.github, receive_notifications:this.state.receive_notifications, public:this.state.public };
 
 		document.getElementById('submitForm').setAttribute('disabled', 'true');
 		this.props.handleSubmit(payload);
@@ -65,6 +65,24 @@ export default class ConfigForm extends Component {
 									return <option value={role}>{role}</option>;
 								})}
 							</select>
+						</div>
+					</div>
+
+					<div className="form-group">
+						<label htmlFor="bio" className="col-md-4 control-label">Short Bio</label>
+						<div className="col-md-6">
+							<textarea
+								id="bio" type="text" className="form-control" name="bio" value={this.state.bio}
+								onChange={this.handleInputChange} />
+						</div>
+					</div>
+
+					<div className="form-group">
+						<label htmlFor="skills" className="col-md-4 control-label">Skills</label>
+						<div className="col-md-6">
+							<input
+								id="skills" type="text" className="form-control" name="skills" value={this.state.skills}
+								onChange={this.handleInputChange} />
 						</div>
 					</div>
 
