@@ -33,7 +33,7 @@ $api->version('v1', function ($api) {
 	$api->post('/promote', 'App\Http\Controllers\PromotionController@create');
 
 	//create a community
-	$api->post('/commmunity', 'App\Http\Controllers\CommunityController@create');
+	$api->post('/community', 'App\Http\Controllers\CommunityController@create');
 
 
 	//get all config
