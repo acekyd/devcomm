@@ -28,6 +28,7 @@ class PromotionController extends ApiController
         $promotion->name = $request->name;
         $promotion->email = $request->email;
         $promotion->title = $request->title;
+        $promotion->slug = str_slug($request->title, '-') . '-' . rand(1, 999);
         $promotion->content = $request->content;
         $promotion->locations = $request->location;
         $promotion->roles = $request->role;
@@ -56,6 +57,21 @@ class PromotionController extends ApiController
         Mail::to('acekyd01@gmail.com')->send(new NewPromotionRequest($promotion));
 
         return $this->response->noContent();
+    }
+
+    public function list(Request $request)
+    {
+        $promotions = Promotion::where('approved', 1)->get();
+
+        return response()->json($promotions);
+    }
+
+    //Get a particular promotion
+    public function show(Request $request)
+    {
+        $promotion = Promotion::where('slug', $request->slug)->first();
+
+        return response()->json($promotion);
     }
 
 }
