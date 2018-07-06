@@ -16,10 +16,4 @@ class Promotion extends Model
 		'name', 'email', 'title', 'content', 'attachment', 'recipients',
 		'interests', 'locations', 'roles', 'rsvp_url', 'slug'
     ];
-
-  public function setSlugAttribute()
-  {
-    $this->attributes['slug'] = str_slug($this->attributes['title'], '-').'-'.rand();
-  }
-
 }
