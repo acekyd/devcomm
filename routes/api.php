@@ -32,12 +32,16 @@ $api->version('v1', function ($api) {
 	//create a promotion
 	$api->post('/promote', 'App\Http\Controllers\PromotionController@create');
 
+	//create a community
+	$api->post('/community', 'App\Http\Controllers\CommunityController@create');
+
+
 	//get all config
 	$api->get('/config', 'App\Http\Controllers\ConfigController@index');
-	
+
 	//get a particular user's profile by alias
 	$api->get('/profile/{alias}', 'App\Http\Controllers\UserController@show');
-	
+
 
 
 	$api->group(['middleware' => 'auth:api'], function ($api) {
@@ -56,6 +60,18 @@ $api->version('v1', function ($api) {
 
 		//update user profile, set preferences etc
 		$api->post('/profile', 'App\Http\Controllers\UserController@update');
+
+		//get promotions
+		$api->get('/promotions', 'App\Http\Controllers\PromotionController@list');
+
+		//get a particular promotion by slug
+		$api->get('/promotion/{slug}', 'App\Http\Controllers\PromotionController@show');
+
+		//get communities
+		$api->get('/communities', 'App\Http\Controllers\CommunityController@list');
+
+		//get a particular communities by slug
+		$api->get('/community/{slug}', 'App\Http\Controllers\CommunityController@show');
 
 	});
 });

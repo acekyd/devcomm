@@ -14,6 +14,6 @@ class Promotion extends Model
      */
     protected $fillable = [
 		'name', 'email', 'title', 'content', 'attachment', 'recipients',
-		'interests', 'locations', 'roles', 'rsvp_url'
+		'interests', 'locations', 'roles', 'rsvp_url', 'slug'
     ];
 }
