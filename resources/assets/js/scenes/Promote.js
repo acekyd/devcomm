@@ -57,9 +57,12 @@ export default class Promote extends Component {
                         <div className="row">
                             <div className="col-md-8 col-md-offset-2">
                                 <div className="panel panel-default">
-                                    <div className="panel-heading">Promote an Event</div>
+                                    <div className="panel-heading">Promote an Event/Opportunity</div>
 
                                     <div className="panel-body">
+                                        <p>
+                                            It is said that talent is evenly distributed but opportunity is not. Promote targeted job opportunities, events, scholarships, competitions and any other information relevant to members of the community.
+                                        </p>
                                         <div id="config">
                                             <ErrorMessages errors={this.state.errors} />
                                             <PromoteForm handleSubmit={this.handleSubmit}/>
