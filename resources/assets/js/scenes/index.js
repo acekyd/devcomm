@@ -5,6 +5,7 @@ import * as authScenes from './auth';
 import Promote from './Promote';
 import Profile from './Profile';
 import NotFound from './NotFound';
+import Community from './Community';
 
 export {
 	Landing,
@@ -13,5 +14,6 @@ export {
 	authScenes,
 	Promote,
 	Profile,
-	NotFound
+	NotFound,
+	Community
 }

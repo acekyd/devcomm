@@ -17,6 +17,7 @@ export default function Routes(props) {
 					<Route path='/home' component={Scenes.Home}/>
 					<Route path='/profile/edit' component={Scenes.Config}/>
 					<Route path='/promote' component={Scenes.Promote}/>
+					<Route path='/community' component={Scenes.Community} />
 					<Route path='/u/:page' component={Scenes.Profile}/>
 					<Route path='/location/:state' component={Scenes.Home}/>
 
