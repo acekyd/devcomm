@@ -16,7 +16,7 @@ export default class Navbar extends Component {
 				localStorage.setItem('config', config);
 			}
 			else config = localStorage.getItem('config');
-			
+
 		} catch (error) {
 			console.error(`Error thrown in NavBar Config component: ${error}`);
 		}
@@ -28,6 +28,7 @@ export default class Navbar extends Component {
 			return (
 				<div className="links">
 					<Link to="/promote">Promote</Link>
+					<Link to="/community/all" className="community">Communities</Link>
 					<ul className="nav navbar-nav navbar-right">
 						<li className="dropdown">
 							<a href="#" className="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true">
@@ -37,6 +38,9 @@ export default class Navbar extends Component {
 							<ul className="dropdown-menu">
 								<li>
 									<Link to="/profile/edit">Edit Profile</Link>
+								</li>
+								<li>
+									<Link to="/community">Add community</Link>
 								</li>
 								<li>
 									<Link to="/logout">Logout</Link>

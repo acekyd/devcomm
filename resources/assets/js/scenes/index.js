@@ -6,6 +6,7 @@ import Promote from './Promote';
 import Profile from './Profile';
 import NotFound from './NotFound';
 import Community from './Community';
+import Communities from './Communities';
 
 export {
 	Landing,
@@ -15,5 +16,6 @@ export {
 	Promote,
 	Profile,
 	NotFound,
-	Community
+	Community,
+	Communities
 }

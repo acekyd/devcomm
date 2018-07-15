@@ -28,8 +28,6 @@ class CreateCommunity extends FormRequest
             'description' => 'required|min:20',
             'primary_location' => 'required',
             'twitter_handle' => 'min:3',
-            'facebook_page' => 'nullable|url',
-            'website' => 'nullable|url',
             'image' => 'required|image'
         ];
     }

@@ -5,6 +5,78 @@
         padding-right: 0;
       }
 
+
+      .community-grid {
+        width: 80%;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        flex-flow: row wrap;
+      }
+
+      .community-grid-container {
+        display: flex;
+        justify-content: center;
+      }
+
+      .community-grid-item {
+        border: 1px solid #ccc;
+        width: calc((100% / 3) - 30px);
+        align-items: center;
+        padding: 10px;
+        align-content: center;
+        margin: 15px;
+        box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+        //media queries for stacking cards
+        @media screen and (max-width: 991px) {
+          width: calc((100% / 2) - 30px);
+        }
+
+        @media screen and (max-width: 767px) {
+          width: 100%;
+          margin: 15px 0px;
+        }
+
+        p {
+          text-align: center;
+        }
+
+        .community-grid-item__inner {
+            display: flex;
+            flex-direction: column;
+            text-transform: uppercase;
+            justify-content: space-between;
+
+            .community {
+              font-weight: 800;
+            }
+            .image {
+              max-height: 250px;
+              overflow: hidden;
+              margin: -10px -10px 10px -10px;
+
+              img {
+                width: 100%;
+                overflow: hidden;
+              }
+            }
+
+
+
+            .details {
+
+              .links {
+                display: flex;
+                justify-content: space-evenly;
+              }
+              span.description {
+                font-size: 80%;
+              }
+            }
+        }
+
+      }
+
       .state-grid-container {
         display: flex;
         justify-content: center;
@@ -48,6 +120,11 @@
 
             .state {
               font-weight: 800;
+            }
+
+            img {
+              width: 100%;
+              height: auto;
             }
 
             .details {

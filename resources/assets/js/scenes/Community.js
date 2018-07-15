@@ -57,7 +57,7 @@ export default class Community extends Component {
                         <div className="row">
                             <div className="col-md-8 col-md-offset-2">
                                 <div className="panel panel-default">
-                                    <div className="panel-heading">Promote an Event/Opportunity</div>
+                                    <div className="panel-heading">Add a Community</div>
 
                                     <div className="panel-body">
                                         <p>
