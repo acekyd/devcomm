@@ -25,7 +25,7 @@
 
                 <p style="margin: 0;padding: 0;font-family: &quot;Helvetica Neue&quot;, &quot;Helvetica&quot;, Helvetica, Arial, sans-serif;font-size: 14px;line-height: 1.6;margin-bottom: 10px;font-weight: normal;">Please find details below</p>
 
-                    <img src="{{$community->attachment}}" alt="{{ $community->title }}" />
+                    <img src="{{$community->image}}" alt="{{ $community->name }}" />
                     <p><b>Commmunity Name:</b> {{ $community->name }}</p>
                     <p><b>Community Location:</b> {{ $community->primary_location }}</p>
                     <p><b>Description:</b> {{ $community->description }}</p>

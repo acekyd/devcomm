@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import { Navbar } from '../components';
-import { PromoteForm } from '../forms';
+import { CommunityForm } from '../forms';
 import { constants } from '../config';
 import { ErrorMessages } from '../components';
 import { Link } from 'react-router-dom';
 
-export default class Promote extends Component {
+export default class Community extends Component {
 
     constructor(props) {
         super(props)
@@ -15,7 +15,7 @@ export default class Promote extends Component {
 
     async handleSubmit(payload) {
         try {
-            let response = await fetch('/api/promote', {
+            let response = await fetch('/api/community', {
                 method: 'POST',
                 headers: {
                     'Accept': 'application/json',
@@ -41,7 +41,7 @@ export default class Promote extends Component {
             }
         } catch (error) {
             console.log(error);
-            console.error(`Error thrown in Adding Promotion: ${error}`);
+            console.error(`Error thrown in Adding Community: ${error}`);
             document.getElementById('submitForm').removeAttribute('disabled');
             // reject(error);
         }
@@ -57,15 +57,15 @@ export default class Promote extends Component {
                         <div className="row">
                             <div className="col-md-8 col-md-offset-2">
                                 <div className="panel panel-default">
-                                    <div className="panel-heading">Promote an Event/Opportunity</div>
+                                    <div className="panel-heading">Add a Community</div>
 
                                     <div className="panel-body">
                                         <p>
-                                            It is said that talent is evenly distributed but opportunity is not. Promote targeted job opportunities, events, scholarships, competitions and any other information relevant to members of the community.
+                                            Do you have or know of an existing community of people or gatherings that help foster the growth of the tech ecosystem. Let's get it on DevComm and accessible to members across locations.
                                         </p>
                                         <div id="config">
                                             <ErrorMessages errors={this.state.errors} />
-                                            <PromoteForm handleSubmit={this.handleSubmit}/>
+                                            <CommunityForm handleSubmit={this.handleSubmit}/>
                                         </div>
                                     </div>
                                 </div>
@@ -83,7 +83,7 @@ export default class Promote extends Component {
                         <div className="row">
                             <div className="col-md-12">
                                     <div>
-                                        Your promotion has been added to the queue and would be sent to members matching your filter. A maximum of 500 (randomized) people matching your filter can be sent your promotion at a time.
+                                        Your community submission has been received and would be made public and accessible by members of the community once approved.
                                         <br /><br />
                                         <a href="/" class="button">Return Home</a>
                                     </div>

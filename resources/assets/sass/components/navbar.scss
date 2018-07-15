@@ -19,6 +19,17 @@
       .links {
         display: flex;
         justify-content: flex-end;
+
+        a {
+          margin-left: 10px;
+        }
+
+        @media screen and (max-width: 600px) {
+          .community {
+            display: none;
+          }
+        }
+
       }
 
       a.brand {
