@@ -53,7 +53,7 @@ class CommunityController extends ApiController
 
         $community->save();
 
-        //Mail::to('acekyd01@gmail.com')->send(new NewCommunityRequest($community));
+        Mail::to('acekyd01@gmail.com')->send(new NewCommunityRequest($community));
 
         return $this->response->noContent();
     }
