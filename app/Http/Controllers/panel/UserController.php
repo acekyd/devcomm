@@ -25,7 +25,7 @@ class UserController extends CrudController{
 			$this->grid->add('alias', 'Alias');
 			$this->grid->add('role', 'Role');
 
-			$this->grid->paginate(50);
+			$this->grid->paginate(100);
 
 			$this->addStylesToGrid();
 
