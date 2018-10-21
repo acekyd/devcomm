@@ -75,9 +75,9 @@ export default class PromoteForm extends Component {
                 </div>
 
                 <div className="form-group">
-                    <label htmlFor="rsvp_url" className="col-md-4 control-label">RSVP URL</label>
+                    <label htmlFor="rsvp_url" className="col-md-4 control-label">URL (RSVP or related)</label>
                     <div className="col-md-6">
-                        <input id="rsvp_url" name="rsvp_url" className="form-control" value={this.state.rsvp_url} onChange={this.handleInputChange} placeholder="e.g. https://meetup.com/event" required />
+                        <input id="rsvp_url" name="rsvp_url" className="form-control" value={this.state.rsvp_url} onChange={this.handleInputChange} placeholder="e.g. https://meetup.com/event" />
                     </div>
                 </div>
 

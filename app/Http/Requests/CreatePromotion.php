@@ -30,7 +30,7 @@ class CreatePromotion extends FormRequest
             'content' => 'required|min:20',
             'location' => 'required',
             'role' => 'required',
-            'rsvp_url' => 'required|url', 
+            'rsvp_url' => 'url',
             'attachment' => 'nullable|image'
         ];
     }
