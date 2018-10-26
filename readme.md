@@ -66,6 +66,9 @@ chmod 600 storage/oauth-private.key
 chmod 600 storage/oauth-public.key
 ```
 
+### Contributing
+Before making any contribution, please read the [contributing guide](./contributing.md).
+
 ### Run the Application
 ```bash
 php artisan serve
