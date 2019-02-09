@@ -2,6 +2,8 @@
 
 DevComm is a directory of developers and designers interested in community activities all across Nigeria.
 
+This project is currently offline to re-evaluate approach to achieve intended goal.
+
 ## Stack
 - Laravel
 
@@ -9,6 +11,7 @@ DevComm is a directory of developers and designers interested in community activ
 ## Team
 
 - Abati Adewale (@acekyd)
+- Contributors
 
 ## Getting Started
 
